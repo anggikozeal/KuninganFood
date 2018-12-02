@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.MKergall:osmbonuspack-6.4">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/osmbonuspack-6.4.aar/16b2aea1337a64d15b9b713225902dac/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/osmbonuspack-6.4.aar/16b2aea1337a64d15b9b713225902dac/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.MKergall/osmbonuspack/6.4/26691825bd57f9c02db8bb6d6fd6fa3f72164b53/osmbonuspack-6.4-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

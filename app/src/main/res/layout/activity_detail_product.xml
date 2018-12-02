@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DetailProduct">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <ImageView
+            android:id="@+id/iv_product_image"
+            android:layout_width="match_parent"
+            android:layout_height="225dp"
+            android:scaleType="fitXY"/>
+        <!--Preface Product-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:background="#FFFFFF"
+            android:layout_marginBottom="10dp"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/tv_product_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="8pt"
+                android:textStyle="bold"
+                android:textColor="#666666"
+                android:text="Product Name"/>
+            <TextView
+                android:id="@+id/tv_product_price"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="7pt"
+                android:textColor="#666666"
+                android:text="Price IDR : 0.000,00"/>
+            <TextView
+                android:id="@+id/tv_product_status"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="7pt"
+                android:textColor="#666666"
+                android:text="Status Tersedia / Tidak Tersedia"/>
+            <TextView
+                android:id="@+id/tv_product_rating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="7pt"
+                android:textColor="#666666"
+                android:text="Rating : 0.0"/>
+            <RatingBar
+                android:id="@+id/rb_rating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:stepSize="1"
+                android:numStars="5"/>
+        </LinearLayout>
+
+        <!--Preface Seller-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:background="#FFFFFF"
+            android:layout_marginBottom="10dp"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/tv_shop_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="8pt"
+                android:textStyle="bold"
+                android:textColor="#666666"
+                android:text="Shop Name"/>
+            <TextView
+                android:id="@+id/tv_shop_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="7pt"
+                android:textColor="#666666"
+                android:text="Shop Address"/>
+        </LinearLayout>
+
+        <!--Preface Seller-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:background="#FFFFFF"
+            android:layout_marginBottom="10dp"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="8pt"
+                android:textStyle="bold"
+                android:textColor="#666666"
+                android:text="Deskripsi"/>
+            <TextView
+                android:id="@+id/tv_product_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="7pt"
+                android:textColor="#666666"
+                android:text="Product "/>
+        </LinearLayout>
+
+        <!--Preface Review-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:background="#FFFFFF"
+            android:layout_marginBottom="10dp"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="8pt"
+                android:textStyle="bold"
+                android:textColor="#666666"
+                android:text="Ulasan Produk"/>
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_product_review"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="7pt"
+                android:textColor="#666666"
+                android:text="Product "/>
+        </LinearLayout>
+
+
+        <!--Preface Transaksi-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:background="#FFFFFF"
+            android:layout_marginBottom="10dp"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="8pt"
+                android:textStyle="bold"
+                android:textColor="#666666"
+                android:text="Pembelian"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="5"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:textSize="7pt"
+                    android:textColor="#666666"
+                    android:text="Jumlah Pembelian"/>
+                <EditText
+                    android:id="@+id/et_qty"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="end"
+                    android:text="1"
+                    android:inputType="number"/>
+            </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="7pt"
+                android:textColor="#666666"
+                android:text="Catatan untuk penjual "/>
+            <EditText
+                android:id="@+id/et_note"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lines="8"
+                android:layout_weight="1"
+                android:gravity="left|top"
+                android:textColorHint="#CCCCCC"
+                android:hint="Catatan untuk penjual (Misal : Sambal jangan terlalu pedas)"
+                android:scrollbars="horizontal"
+                android:inputType="textMultiLine"/>
+            <Button
+                android:id="@+id/btn_keranjang"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimary"
+                android:layout_marginTop="16dp"
+                android:textColor="#FFFFFF"
+                android:text="Tambahkan Ke Keranjang"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

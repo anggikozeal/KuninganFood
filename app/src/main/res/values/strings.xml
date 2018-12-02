@@ -1,0 +1,109 @@
+<resources>
+    <string name="app_name">Food Marketplace</string>
+    <string name="title_nav_beranda">Beranda</string>
+    <string name="title_nav_cari">Cari</string>
+    <string name="title_nav_keranjang">Keranjang Belanja</string>
+    <string name="title_nav_riwayat_transaksi">Transaksi</string>
+    <string name="title_nav_notifikasi">Notifikasi</string>
+    <string name="title_nav_akun">Akun</string>
+
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+    <string name="label_rating">Rating : </string>
+    <string name="label_price">Harga Rp  </string>
+
+
+    <string name="slash">/</string>
+
+    <!--API-->
+    <string name="api">http://192.168.0.8/foodmarketplace/index.php/api/</string>
+    <string name="endpoint_product_latest">product_latest/</string>
+    <string name="endpoint_login">verifikasi/</string>
+    <string name="endpoint_transac_insert">transaction_insert/</string>
+    <string name="endpoint_transac">transaction/</string>  <!-- key/val/status -->
+    <string name="endpoint_transac_update_status">transaction_update_status/</string>
+
+    <!--TAG-->
+    <string name="debug"> ---- FOOD MARKETPLACE</string>
+    <string name="tag_request_product_latest">REG_PROD_LATEST</string>
+    <string name="tag_request_login">REG_LOGIN</string>
+    <string name="tag_request_transac_insert">TRANSAC_INSERT</string>
+    <string name="tag_request_transac_keranjang">TRANSAC_KERANJANG</string>
+    <string name="tag_request_transac_update_status">TRANSAC_UPDATE_STATUS</string>
+
+
+    <!--PROGRESS LOADING-->
+    <string name="progress_loading">Loading . . .</string>
+
+
+    <!--JSON KEY-->
+    <string name="json_key_severity">severity</string>
+    <string name="json_key_content">content</string>
+    <string name="json_key_product">product</string>
+    <string name="json_key_shop">shop</string>
+    <string name="json_key_user">user</string>
+    <string name="json_key_id">id</string>
+    <string name="json_key_id_shop">id_shop</string>
+    <string name="json_key_name">name</string>
+    <string name="json_key_category">category</string>
+    <string name="json_key_status">status</string>
+    <string name="json_key_price">price</string>
+    <string name="json_key_discount">discount</string>
+    <string name="json_key_description">description</string>
+    <string name="json_key_rating">rating</string>
+    <string name="json_key_image">image</string>
+    <string name="json_key_id_user">id_user</string>
+    <string name="json_key_shop_name">shop_name</string>
+    <string name="json_key_address">address</string>
+    <string name="json_key_username">username</string>
+    <string name="json_key_password">password</string>
+    <string name="json_key_full_name">full_name</string>
+    <string name="json_key_phone">phone</string>
+    <string name="json_key_last_login">last_login</string>
+    <string name="json_key_transaction">transaction</string>
+    <string name="json_key_datetime">datetime</string>
+    <string name="json_key_id_transaction">id_transaction</string>
+    <string name="json_key_qty">qty</string>
+    <string name="json_key_note">note</string>
+
+
+    <!--STRING VALUE-->
+    <string name="success">success</string>
+    <string name="warning">warning</string>
+
+
+    <!--SHARED PREFERENCES-->
+    <string name="sharedpreferences">SHRD_PREF_FMP</string>
+    <string name="sharedpreferences_user_id">id</string>
+    <string name="sharedpreferences_user_username">username</string>
+    <string name="sharedpreferences_user_password">password</string>
+    <string name="sharedpreferences_user_full_name">full_name</string>
+    <string name="sharedpreferences_user_address">address</string>
+    <string name="sharedpreferences_user_phone">phone</string>
+    <string name="sharedpreferences_user_last_login">last_login</string>
+    <string name="sharedpreferences_shop_id">id_shop</string>
+    <string name="sharedpreferences_shop_name">shop_name</string>
+    <string name="sharedpreferences_shop_address">shop_address</string>
+
+
+    <!--DIALOG -->
+    <string name="dialog_exit_title_confirm">Konfirmasi</string>
+    <string name="dialog_exit_message">Apakah Anda akan keluar menutup aplikasi?</string>
+    <string name="dialog_beranda_message">Kembali ke halaman beranda?</string>
+
+
+    <string name="dialog_ya">Ya</string>
+    <string name="dialog_tidak">Tidak</string>
+
+    <!--ALERT-->
+    <string name="alert_login">Login</string>
+    <string name="alert_register">Register</string>
+    <string name="title_activity_riwayat_transaksi">Riwayat Transaksi</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+    <string name="tab_text_3">Tab 3</string>
+    <string name="action_settings">Settings</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+</resources>

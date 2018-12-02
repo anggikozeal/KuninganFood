@@ -39,7 +39,7 @@
             android:name=".Register"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".RiwayatTransaksi"
+            android:name=".RiwayatTransaksiPembelian"
             android:label="@string/title_activity_riwayat_transaksi"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>

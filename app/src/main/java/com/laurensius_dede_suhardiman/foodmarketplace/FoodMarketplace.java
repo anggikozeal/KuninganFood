@@ -17,6 +17,7 @@ import android.view.MenuItem;
 import com.laurensius_dede_suhardiman.foodmarketplace.fragments.FragmentAkun;
 import com.laurensius_dede_suhardiman.foodmarketplace.fragments.FragmentBeranda;
 import com.laurensius_dede_suhardiman.foodmarketplace.fragments.FragmentKeranjang;
+import com.laurensius_dede_suhardiman.foodmarketplace.fragments.FragmentRiwayat;
 import com.laurensius_dede_suhardiman.foodmarketplace.model.Product;
 import com.laurensius_dede_suhardiman.foodmarketplace.model.Shop;
 import com.laurensius_dede_suhardiman.foodmarketplace.model.User;
@@ -57,7 +58,7 @@ public class FoodMarketplace extends AppCompatActivity {
                         selectedFragment = new FragmentKeranjang();
                         break;
                     case R.id.navigation_riwayat:
-//                        selectedFragment = new FragmentAbout();
+                        selectedFragment = new FragmentRiwayat();
                         break;
                     case R.id.navigation_notifikasi:
 //                        selectedFragment = new FragmentAbout();

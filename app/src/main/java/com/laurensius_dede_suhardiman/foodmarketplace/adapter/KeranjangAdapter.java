@@ -2,19 +2,14 @@ package com.laurensius_dede_suhardiman.foodmarketplace.adapter;
 
 import android.app.ProgressDialog;
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.support.v7.widget.CardView;
-import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Base64;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,17 +17,14 @@ import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
-import com.laurensius_dede_suhardiman.foodmarketplace.FoodMarketplace;
 import com.laurensius_dede_suhardiman.foodmarketplace.R;
 import com.laurensius_dede_suhardiman.foodmarketplace.appcontroller.AppController;
-import com.laurensius_dede_suhardiman.foodmarketplace.model.Product;
 import com.laurensius_dede_suhardiman.foodmarketplace.model.Transaction;
 import com.laurensius_dede_suhardiman.foodmarketplace.model.TransactionDetail;
 
 import org.json.JSONObject;
 
 import java.text.DecimalFormat;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
@@ -56,7 +48,7 @@ public class KeranjangAdapter extends RecyclerView.Adapter<KeranjangAdapter.Hold
     public void onBindViewHolder(HolderTransaction holderTransaction,final int i){
         RecyclerView.LayoutManager mLayoutManager;
         List<TransactionDetail> transactionDetailList;
-        TransactionDetailAdapter transactionDetailAdapter = null;
+        TransactionKeranjangAdapter transactionDetailAdapter = null;
         transactionDetailList = listTransaction.get(i).getTransactionDetailList();
 
         holderTransaction.tvShopName.setText(listTransaction.get(i).getShop().getShopName());
@@ -79,7 +71,7 @@ public class KeranjangAdapter extends RecyclerView.Adapter<KeranjangAdapter.Hold
         holderTransaction.rvProductKeranjang.setHasFixedSize(true);
         mLayoutManager = new LinearLayoutManager(ctx);
         holderTransaction.rvProductKeranjang.setLayoutManager(mLayoutManager);
-        transactionDetailAdapter = new TransactionDetailAdapter(transactionDetailList,ctx);
+        transactionDetailAdapter = new TransactionKeranjangAdapter(transactionDetailList,ctx);
         transactionDetailAdapter.notifyDataSetChanged();
         holderTransaction.rvProductKeranjang.setAdapter(transactionDetailAdapter);
 

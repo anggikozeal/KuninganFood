@@ -1,12 +1,15 @@
 package com.laurensius_dede_suhardiman.foodmarketplace.fragments;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,7 +19,9 @@ import android.widget.TextView;
 
 import com.google.android.gms.vision.text.Line;
 import com.laurensius_dede_suhardiman.foodmarketplace.FoodMarketplace;
+import com.laurensius_dede_suhardiman.foodmarketplace.Login;
 import com.laurensius_dede_suhardiman.foodmarketplace.R;
+import com.laurensius_dede_suhardiman.foodmarketplace.Register;
 
 public class FragmentAkun extends Fragment {
 
@@ -43,6 +48,25 @@ public class FragmentAkun extends Fragment {
         llNoSession = (LinearLayout)inflaterAkun.findViewById(R.id.ll_no_session);
         btnRegister = (Button)inflaterAkun.findViewById(R.id.btn_register);
         btnLogin = (Button)inflaterAkun.findViewById(R.id.btn_login);
+
+        btnLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getContext(),Login.class);
+                startActivity(intent);
+                FoodMarketplace.activity.finish();
+            }
+        });
+
+
+        btnRegister.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getContext(),Register.class);
+                startActivity(intent);
+                FoodMarketplace.activity.finish();
+            }
+        });
 
         llSession = (LinearLayout)inflaterAkun.findViewById(R.id.ll_session);
         tvFullName = (TextView)inflaterAkun.findViewById(R.id.tv_full_name);
@@ -72,14 +96,23 @@ public class FragmentAkun extends Fragment {
         llMenuLogout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                sharedPreferences = getActivity().getSharedPreferences(getResources().getString(R.string.sharedpreferences), 0);
-                editorPreferences = sharedPreferences.edit();
-                editorPreferences.clear();
-                editorPreferences.commit();
-                FoodMarketplace.currentUser = null;
-                Intent intent = new Intent(getContext(),FoodMarketplace.class);
-                startActivity(intent);
-                FoodMarketplace.activity.finish();
+            new AlertDialog.Builder(getContext())
+                .setTitle("Konfirmasi")
+                .setMessage("APakah anda akan keluar dari sesi pad aplikasi ini?")
+                .setIcon(android.R.drawable.ic_menu_info_details)
+                .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int whichButton) {
+                        dialog.dismiss();
+                        sharedPreferences = getActivity().getSharedPreferences(getResources().getString(R.string.sharedpreferences), 0);
+                        editorPreferences = sharedPreferences.edit();
+                        editorPreferences.clear();
+                        editorPreferences.commit();
+                        FoodMarketplace.currentUser = null;
+                        Intent intent = new Intent(getContext(),FoodMarketplace.class);
+                        startActivity(intent);
+                        FoodMarketplace.activity.finish();
+                    }}).show().
+                getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(Color.parseColor("#3d9b2d"));
             }
         });
     }

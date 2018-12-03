@@ -41,8 +41,6 @@ public class Login extends AppCompatActivity {
     SharedPreferences sharedPreferences;
     SharedPreferences.Editor editorPreferences;
 
-    private Dialog dialBox;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,7 +64,6 @@ public class Login extends AppCompatActivity {
                 finish();
             }
         });
-        dialBox = createDialogBox();
     }
 
     public void validateInput(){
@@ -88,7 +85,9 @@ public class Login extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        dialBox.show();
+        Intent intent = new Intent(Login.this,FoodMarketplace.class);
+        startActivity(intent);
+        finish();
     }
 
     public void requestLogin(String u,String p){
@@ -166,22 +165,6 @@ public class Login extends AppCompatActivity {
                                         editorPreferences.putString(getResources().getString(R.string.sharedpreferences_shop_id),objShop.getString(getResources().getString(R.string.json_key_id)));
                                         editorPreferences.putString(getResources().getString(R.string.sharedpreferences_shop_name),objShop.getString(getResources().getString(R.string.json_key_shop_name)));
                                         editorPreferences.putString(getResources().getString(R.string.sharedpreferences_shop_address),objShop.getString(getResources().getString(R.string.json_key_address)));
-//                                          Shop shop = new Shop(
-//                                                objShop.getString(getResources().getString(R.string.json_key_id)),
-//                                                objShop.getString(getResources().getString(R.string.json_ke
-// y_id_user)),
-//                                                objShop.getString(getResources().getString(R.string.json_key_shop_name)),
-//                                                objShop.getString(getResources().getString(R.string.json_key_address)),
-//                                                new User(
-//                                                        objUser.getString(getResources().getString(R.string.json_key_id)),
-//                                                        objUser.getString(getResources().getString(R.string.json_key_username)),
-//                                                        objUser.getString(getResources().getString(R.string.json_key_password)),
-//                                                        objUser.getString(getResources().getString(R.string.json_key_full_name)),
-//                                                        objUser.getString(getResources().getString(R.string.json_key_address)),
-//                                                        objUser.getString(getResources().getString(R.string.json_key_phone)),
-//                                                        objUser.getString(getResources().getString(R.string.json_key_last_login))
-//                                            )
-//                                        );
                                     }
                                     editorPreferences.commit();
                                     startActivity(intent);
@@ -222,26 +205,6 @@ public class Login extends AppCompatActivity {
                         }}).show().
                     getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(Color.parseColor("#3d9b2d"));
         }
-    }
-
-    private Dialog createDialogBox(){
-        dialBox = new AlertDialog.Builder(this)
-                .setTitle(getResources().getString(R.string.dialog_exit_title_confirm))
-                .setMessage(getResources().getString(R.string.dialog_beranda_message))
-                .setPositiveButton(getResources().getString(R.string.dialog_ya), new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int whichButton) {
-                        Intent intent = new Intent(Login.this,FoodMarketplace.class);
-                        startActivity(intent);
-                        finish();
-                    }
-                })
-                .setNegativeButton(getResources().getString(R.string.dialog_tidak), new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int whichButton) {
-                        dialBox.dismiss();
-                    }
-                })
-                .create();
-        return dialBox;
     }
 
 }

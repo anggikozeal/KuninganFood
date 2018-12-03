@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".KonfirmasiPembayaran">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:layout_margin="5dp"
+            android:textSize="8pt"
+            android:text="Silakan unggah bukti transaksi (Bukti transfer atas transaksi Anda!"/>
+
+        <ImageView
+            android:id="@+id/iv_bukti_transaksi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:padding="5dp"
+            android:background="#CCCCCC"
+            android:adjustViewBounds="true"
+            android:src="@drawable/icon_bukti_transaksi"/>
+
+        <Button
+            android:id="@+id/btn_unggah_bukti"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#FFFFFF"
+            android:layout_margin="5dp"
+            android:text="Unggah Bukti Transaksi"
+            android:background="@color/colorPrimary"/>
+
+
+    </LinearLayout>
+
+
+
+</ScrollView>

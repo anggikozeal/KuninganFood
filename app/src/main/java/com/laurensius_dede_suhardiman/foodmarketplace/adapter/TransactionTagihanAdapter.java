@@ -29,7 +29,7 @@ public class TransactionTagihanAdapter extends RecyclerView.Adapter<TransactionT
 
     @Override
     public HolderTransactionDetail onCreateViewHolder(ViewGroup viewGroup, int i){
-        View v = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_product_tagihan,viewGroup,false);
+        View v = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_product_proses,viewGroup,false);
         HolderTransactionDetail holderTransactionDetail = new HolderTransactionDetail(v);
         return holderTransactionDetail;
     }

@@ -20,7 +20,8 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.laurensius_dede_suhardiman.foodmarketplace.FoodMarketplace;
 import com.laurensius_dede_suhardiman.foodmarketplace.R;
-import com.laurensius_dede_suhardiman.foodmarketplace.adapter.KeranjangAdapter;
+import com.laurensius_dede_suhardiman.foodmarketplace.adapter.KonfirmasiAdapter;
+import com.laurensius_dede_suhardiman.foodmarketplace.adapter.ProsesAdapter;
 import com.laurensius_dede_suhardiman.foodmarketplace.adapter.TagihanAdapter;
 import com.laurensius_dede_suhardiman.foodmarketplace.appcontroller.AppController;
 import com.laurensius_dede_suhardiman.foodmarketplace.model.Product;
@@ -45,6 +46,8 @@ public class FragmentTransaksiPembelian extends Fragment {
     List<Transaction> listTransaction = new ArrayList<>();
     private RecyclerView rvTransaksiPembelian;
     private TagihanAdapter tagihanAdapter = null;
+    private KonfirmasiAdapter konfirmasiAdapter = null;
+    private ProsesAdapter prosesAdapter = null;
 
     private int onTagihan = 1;
     private int onKonfirmasi = 2;
@@ -88,7 +91,30 @@ public class FragmentTransaksiPembelian extends Fragment {
         llNoData.setVisibility(View.GONE);
         llFailed.setVisibility(View.GONE);
         llSuccess.setVisibility(View.GONE);
+
+        dataToView();
+
+        llFailed.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dataToView();
+            }
+        });
         
+
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+    }
+
+    public void dataToView(){
         if(stage==onTagihan){
             listTransaction.clear();
             requestTransactionStage("ON_TAGIHAN");
@@ -103,31 +129,42 @@ public class FragmentTransaksiPembelian extends Fragment {
         if(stage==onKonfirmasi){
             listTransaction.clear();
             requestTransactionStage("ON_KONFIRMASI");
+            rvTransaksiPembelian.setAdapter(null);
+            rvTransaksiPembelian.setHasFixedSize(true);
+            mLayoutManager = new LinearLayoutManager(getContext());
+            rvTransaksiPembelian.setLayoutManager(mLayoutManager);
+            konfirmasiAdapter = new KonfirmasiAdapter(listTransaction,getActivity());
+            konfirmasiAdapter.notifyDataSetChanged();
+            rvTransaksiPembelian.setAdapter(konfirmasiAdapter);
         }else
         if(stage==onProses){
             listTransaction.clear();
             requestTransactionStage("ON_PROSES");
+            rvTransaksiPembelian.setAdapter(null);
+            rvTransaksiPembelian.setHasFixedSize(true);
+            mLayoutManager = new LinearLayoutManager(getContext());
+            rvTransaksiPembelian.setLayoutManager(mLayoutManager);
+            prosesAdapter = new ProsesAdapter(listTransaction,getActivity());
+            prosesAdapter.notifyDataSetChanged();
+            rvTransaksiPembelian.setAdapter(prosesAdapter);
         }else
         if(stage==onFinish){
             listTransaction.clear();
             requestTransactionStage("ON_FINISH");
+            rvTransaksiPembelian.setAdapter(null);
+            rvTransaksiPembelian.setHasFixedSize(true);
+            mLayoutManager = new LinearLayoutManager(getContext());
+            rvTransaksiPembelian.setLayoutManager(mLayoutManager);
+            tagihanAdapter = new TagihanAdapter(listTransaction,getActivity());
+            tagihanAdapter.notifyDataSetChanged();
+            rvTransaksiPembelian.setAdapter(tagihanAdapter);
         }
-    }
-
-    @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-    }
-
-    @Override
-    public void onDetach() {
-        super.onDetach();
     }
 
     public void requestTransactionStage(String levelStage){
         Random random = new Random();
         int rnd = random.nextInt(999999 - 99) + 99;
-        String transac_keranjang = getResources().getString(R.string.tag_request_transac_keranjang);
+        String transac_by_status = getResources().getString(R.string.tag_request_transac_by_status);
         String url = getResources().getString(R.string.api)
                 .concat(getResources().getString(R.string.endpoint_transac))
                 .concat("id_user") //key
@@ -160,7 +197,7 @@ public class FragmentTransaksiPembelian extends Fragment {
                         llSuccess.setVisibility(View.GONE);
                     }
                 });
-        AppController.getInstance().addToRequestQueue(jsonObjReq, transac_keranjang);
+        AppController.getInstance().addToRequestQueue(jsonObjReq, transac_by_status);
     }
 
     public void parseData(JSONObject responseJsonObj){
@@ -201,7 +238,6 @@ public class FragmentTransaksiPembelian extends Fragment {
                                 ));
                             }
                         }
-                        ///---------------------------------
 
                         listTransaction.add(
                                 new Transaction(
@@ -251,12 +287,11 @@ public class FragmentTransaksiPembelian extends Fragment {
         if(stage==onTagihan){
             tagihanAdapter.notifyDataSetChanged();
         }else
-
         if(stage==onKonfirmasi){
-
+            konfirmasiAdapter.notifyDataSetChanged();
         }else
         if(stage==onProses){
-
+            prosesAdapter.notifyDataSetChanged();
         }else
         if(stage==onFinish){
 

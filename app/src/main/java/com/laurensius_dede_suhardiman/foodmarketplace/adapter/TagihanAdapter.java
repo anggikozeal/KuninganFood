@@ -2,6 +2,7 @@ package com.laurensius_dede_suhardiman.foodmarketplace.adapter;
 
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -17,6 +18,8 @@ import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
+import com.laurensius_dede_suhardiman.foodmarketplace.FoodMarketplace;
+import com.laurensius_dede_suhardiman.foodmarketplace.KonfirmasiPembayaran;
 import com.laurensius_dede_suhardiman.foodmarketplace.R;
 import com.laurensius_dede_suhardiman.foodmarketplace.appcontroller.AppController;
 import com.laurensius_dede_suhardiman.foodmarketplace.model.Transaction;
@@ -79,8 +82,12 @@ public class TagihanAdapter extends RecyclerView.Adapter<TagihanAdapter.HolderTr
             @Override
             public void onClick(View v) {
                 //update status transaksi ke ON_TAGIHAN
-                Toast.makeText(ctx,"KOnfirmasi Pembayaran",Toast.LENGTH_LONG).show();
-                requestTransactionUpdateStatus(listTransaction.get(i).getId(),"ON_KONFIRMASI");
+//                Toast.makeText(ctx,"Konfirmasi Pembayaran",Toast.LENGTH_LONG).show();
+//                requestTransactionUpdateStatus(listTransaction.get(i).getId(),"ON_KONFIRMASI");
+                Intent intent = new Intent(ctx,KonfirmasiPembayaran.class);
+                intent.putExtra("idTransaction",listTransaction.get(i).getId());
+                ctx.startActivity(intent);
+                FoodMarketplace.activity.finish();
             }
         });
     }

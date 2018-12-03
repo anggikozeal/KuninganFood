@@ -50,7 +50,7 @@ public class RiwayatTransaksiPembelian extends AppCompatActivity {
 
         @Override
         public int getCount() {
-            return 3;
+            return 4;
         }
     }
 }

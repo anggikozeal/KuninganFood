@@ -42,7 +42,9 @@
             android:name=".RiwayatTransaksiPembelian"
             android:label="@string/title_activity_riwayat_transaksi"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".KonfirmasiPembayaran"></activity>
+        <activity android:name=".KonfirmasiPembayaran" />
+        <activity android:name=".BukaToko" />
+        <activity android:name=".TambahProduk"></activity>
     </application>
 
 </manifest>

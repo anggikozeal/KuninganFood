@@ -73,15 +73,22 @@ public class FragmentKeranjang extends Fragment {
         llFailed.setVisibility(View.GONE);
         llSuccess.setVisibility(View.GONE);
 
-        rvKeranjang.setAdapter(null);
-        rvKeranjang.setHasFixedSize(true);
-//        rvKeranjang.setLayoutManager(new GridLayoutManager(getContext(),2))
-        mLayoutManager = new LinearLayoutManager(getContext());
-        rvKeranjang.setLayoutManager(mLayoutManager);
-        keranjangAdapter = new KeranjangAdapter(listTransaction,getContext());
-        keranjangAdapter.notifyDataSetChanged();
-        rvKeranjang.setAdapter(keranjangAdapter);
-        requestTransactionKeranjang();
+        if(FoodMarketplace.currentUser != null){
+            rvKeranjang.setAdapter(null);
+            rvKeranjang.setHasFixedSize(true);
+            mLayoutManager = new LinearLayoutManager(getContext());
+            rvKeranjang.setLayoutManager(mLayoutManager);
+            keranjangAdapter = new KeranjangAdapter(listTransaction,getContext());
+            keranjangAdapter.notifyDataSetChanged();
+            rvKeranjang.setAdapter(keranjangAdapter);
+            requestTransactionKeranjang();
+        }else {
+            llNoData.setVisibility(View.VISIBLE);
+            llFailed.setVisibility(View.GONE);
+            llSuccess.setVisibility(View.GONE);
+        }
+
+
     }
 
     @Override

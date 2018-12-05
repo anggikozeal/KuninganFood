@@ -26,6 +26,7 @@
     <string name="endpoint_transac_update_status">transaction_update_status/</string>
     <string name="endpoint_transac_upload_bukti">transaction_upload_bukti/</string>
     <string name="endpoint_register">verifikasi_register/</string>
+    <string name="endpoint_shop_insert">shop_insert/</string>
 
     <!--TAG-->
     <string name="debug"> ---- FOOD MARKETPLACE</string>
@@ -37,6 +38,7 @@
     <string name="tag_request_transac_by_status">TRANSAC_BY_STATUS</string>
     <string name="tag_request_transac_upload_bukti">TRANSAC_UPLOAD_BUKTI</string>
     <string name="tag_request_register">REGISTER</string>
+    <string name="tag_request_shop_insert">SHOP_INSERT</string>
 
 
     <!--PROGRESS LOADING-->

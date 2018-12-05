@@ -12,7 +12,9 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.laurensius_dede_suhardiman.foodmarketplace.fragments.FragmentAkun;
 import com.laurensius_dede_suhardiman.foodmarketplace.fragments.FragmentBeranda;
@@ -109,6 +111,7 @@ public class FoodMarketplace extends AppCompatActivity {
             );
         }
         if(shopId != null){
+            Log.d(getResources().getString(R.string.debug),"Toko ok, namanya " + sharedPreferences.getString(getResources().getString(R.string.sharedpreferences_shop_name),null));
             FoodMarketplace.currentShop = new Shop(
                     sharedPreferences.getString(getResources().getString(R.string.sharedpreferences_shop_id),null),
                     sharedPreferences.getString(getResources().getString(R.string.sharedpreferences_user_id),null),
@@ -116,7 +119,7 @@ public class FoodMarketplace extends AppCompatActivity {
                     sharedPreferences.getString(getResources().getString(R.string.sharedpreferences_shop_address),null),
                     FoodMarketplace.currentUser
             );
-
+            Toast.makeText(FoodMarketplace.this,FoodMarketplace.currentShop.getId(),Toast.LENGTH_LONG).show();
         }
     }
 

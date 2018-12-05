@@ -170,6 +170,7 @@
                     android:padding="5dp"
                     android:textColor="#666666"/>
                 <LinearLayout
+                    android:id="@+id/ll_menu_kelola_toko"
                     android:padding="5dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -188,6 +189,7 @@
                         android:textColor="#666666"/>
                 </LinearLayout>
                 <LinearLayout
+                    android:id="@+id/ll_menu_tambah_dagangan"
                     android:padding="5dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

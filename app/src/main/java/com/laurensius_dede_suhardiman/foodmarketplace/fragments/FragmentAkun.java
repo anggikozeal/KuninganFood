@@ -18,6 +18,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.google.android.gms.vision.text.Line;
+import com.laurensius_dede_suhardiman.foodmarketplace.BukaToko;
 import com.laurensius_dede_suhardiman.foodmarketplace.FoodMarketplace;
 import com.laurensius_dede_suhardiman.foodmarketplace.Login;
 import com.laurensius_dede_suhardiman.foodmarketplace.R;
@@ -30,6 +31,8 @@ public class FragmentAkun extends Fragment {
 
     private LinearLayout llNoSession, llSession;
     private LinearLayout llMenuKelolaAkun, llMenuLogout;
+    private LinearLayout llMenuKelolaToko, llMenuTambahDagangan;
+
     private Button btnLogin,btnRegister;
 
     private TextView tvFullName, tvUsername;
@@ -45,6 +48,10 @@ public class FragmentAkun extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View inflaterAkun =  inflater.inflate(R.layout.fragment_akun, container, false);
+
+        tvFullName = (TextView)inflaterAkun.findViewById(R.id.tv_full_name);
+        tvUsername= (TextView)inflaterAkun.findViewById(R.id.tv_username);
+
         llNoSession = (LinearLayout)inflaterAkun.findViewById(R.id.ll_no_session);
         btnRegister = (Button)inflaterAkun.findViewById(R.id.btn_register);
         btnLogin = (Button)inflaterAkun.findViewById(R.id.btn_login);
@@ -73,6 +80,10 @@ public class FragmentAkun extends Fragment {
         tvUsername = (TextView)inflaterAkun.findViewById(R.id.tv_username);
         llMenuKelolaAkun = (LinearLayout)inflaterAkun.findViewById(R.id.ll_menu_kelola_akun);
         llMenuLogout = (LinearLayout)inflaterAkun.findViewById(R.id.ll_menu_logout);
+
+        llMenuKelolaToko = (LinearLayout)inflaterAkun.findViewById(R.id.ll_menu_kelola_toko);
+        llMenuTambahDagangan =  (LinearLayout)inflaterAkun.findViewById(R.id.ll_menu_tambah_dagangan);
+
         return inflaterAkun;
     }
 
@@ -81,6 +92,8 @@ public class FragmentAkun extends Fragment {
         if(FoodMarketplace.currentUser != null){
             llNoSession.setVisibility(View.GONE);
             llSession.setVisibility(View.VISIBLE);
+            tvFullName.setText(FoodMarketplace.currentUser.getFullName());
+            tvUsername.setText(FoodMarketplace.currentUser.getUsername());
         }else{
             llNoSession.setVisibility(View.VISIBLE);
             llSession.setVisibility(View.GONE);
@@ -115,6 +128,62 @@ public class FragmentAkun extends Fragment {
                 getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(Color.parseColor("#3d9b2d"));
             }
         });
+
+        //
+        llMenuKelolaToko.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(FoodMarketplace.currentShop != null){
+                    new AlertDialog.Builder(getContext())
+                            .setTitle("Peringatan")
+                            .setMessage("Anda sudah memiliki toko, silakan unggah produk Anda!")
+                            .setIcon(android.R.drawable.ic_menu_info_details)
+                            .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int whichButton) {
+                                    dialog.dismiss();
+                                }}).show().
+                            getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(Color.parseColor("#3d9b2d"));
+                }else{
+                    new AlertDialog.Builder(getContext())
+                            .setTitle("Konfirmasi")
+                            .setMessage("Buka toko untuk mulai berjualan?")
+                            .setIcon(android.R.drawable.ic_menu_info_details)
+                            .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int whichButton) {
+                                    dialog.dismiss();
+                                    Intent intent = new Intent(getContext(),BukaToko.class);
+                                    intent.putExtra("idUser",FoodMarketplace.currentUser.getId());
+                                    startActivity(intent);
+                                    FoodMarketplace.activity.finish();
+                                }}).show().
+                            getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(Color.parseColor("#3d9b2d"));
+                }
+            }
+        });
+
+        //
+        llMenuTambahDagangan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(FoodMarketplace.currentShop != null){
+
+                }else{
+                    new AlertDialog.Builder(getContext())
+                            .setTitle("Konfirmasi")
+                            .setMessage("Buka toko untuk mulai berjualan?")
+                            .setIcon(android.R.drawable.ic_menu_info_details)
+                            .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int whichButton) {
+                                    dialog.dismiss();
+
+                                }}).show().
+                            getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(Color.parseColor("#3d9b2d"));
+                }
+            }
+        });
+
+
+
     }
 
 

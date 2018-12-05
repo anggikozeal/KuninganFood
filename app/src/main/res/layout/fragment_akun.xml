@@ -15,7 +15,7 @@
         <!--NO SESSIOn-->
         <LinearLayout
             android:id="@+id/ll_no_session"
-            android:visibility="visible"
+            android:visibility="gone"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
@@ -68,7 +68,7 @@
         <!--SESSION-->
         <LinearLayout
             android:id="@+id/ll_session"
-            android:visibility="gone"
+            android:visibility="visible"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
@@ -208,6 +208,7 @@
                         android:textColor="#666666"/>
                 </LinearLayout>
                 <LinearLayout
+                    android:id="@+id/ll_menu_kelola_dagangan"
                     android:padding="5dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

@@ -23,6 +23,7 @@ import com.laurensius_dede_suhardiman.foodmarketplace.FoodMarketplace;
 import com.laurensius_dede_suhardiman.foodmarketplace.Login;
 import com.laurensius_dede_suhardiman.foodmarketplace.R;
 import com.laurensius_dede_suhardiman.foodmarketplace.Register;
+import com.laurensius_dede_suhardiman.foodmarketplace.TambahProduk;
 
 public class FragmentAkun extends Fragment {
 
@@ -166,7 +167,9 @@ public class FragmentAkun extends Fragment {
             @Override
             public void onClick(View v) {
                 if(FoodMarketplace.currentShop != null){
-
+                    Intent intent = new Intent(getContext(),TambahProduk.class);
+                    intent.putExtra("idShop",FoodMarketplace.currentShop.getId());
+                    startActivity(intent);
                 }else{
                     new AlertDialog.Builder(getContext())
                             .setTitle("Konfirmasi")

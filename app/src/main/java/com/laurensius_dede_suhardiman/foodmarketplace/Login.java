@@ -168,6 +168,7 @@ public class Login extends AppCompatActivity {
                                     }
                                     editorPreferences.commit();
                                     startActivity(intent);
+                                    finish();
                                 }catch (JSONException e){
                                     Toast.makeText(getApplicationContext(),e.getMessage(),Toast.LENGTH_LONG).show();
                                     new AlertDialog.Builder(Login.this)

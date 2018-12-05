@@ -27,6 +27,7 @@
     <string name="endpoint_transac_upload_bukti">transaction_upload_bukti/</string>
     <string name="endpoint_register">verifikasi_register/</string>
     <string name="endpoint_shop_insert">shop_insert/</string>
+    <string name="endpoint_product_insert">product_insert/</string>
 
     <!--TAG-->
     <string name="debug"> ---- FOOD MARKETPLACE</string>
@@ -39,6 +40,7 @@
     <string name="tag_request_transac_upload_bukti">TRANSAC_UPLOAD_BUKTI</string>
     <string name="tag_request_register">REGISTER</string>
     <string name="tag_request_shop_insert">SHOP_INSERT</string>
+    <string name="tag_request_product_insert">PRODUCT_INSERT</string>
 
 
     <!--PROGRESS LOADING-->
@@ -126,4 +128,14 @@
     <string name="toast_save_image_failed">Gambar gagal disimpan</string>
     <string name="toast_form_report_not_complete">Silakan lampirkan gambar/foto beserta keterangannya</string>
 
+
+    <string-array name="category">
+        <item>1 - Makanan</item>
+        <item>2 - Minuman</item>
+    </string-array>
+    <string-array name="status">
+        <item>1 - Tersedia</item>
+        <item>2 - Tidak Tersedia</item>
+        <item>3 - Dihapus</item>
+    </string-array>
 </resources>

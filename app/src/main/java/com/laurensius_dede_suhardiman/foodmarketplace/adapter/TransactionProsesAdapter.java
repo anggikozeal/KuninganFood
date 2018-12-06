@@ -18,18 +18,18 @@ import com.laurensius_dede_suhardiman.foodmarketplace.model.TransactionDetail;
 
 import java.util.List;
 
-public class TransactionFinishAdapter extends RecyclerView.Adapter<TransactionFinishAdapter.HolderTransactionDetail> {
+public class TransactionProsesAdapter extends RecyclerView.Adapter<TransactionProsesAdapter.HolderTransactionDetail> {
     List<TransactionDetail> listTransactionDetail;
     Context ctx;
 
-    public TransactionFinishAdapter(List<TransactionDetail> listTransactionDetail, Context ctx){
+    public TransactionProsesAdapter(List<TransactionDetail> listTransactionDetail, Context ctx){
         this.listTransactionDetail = listTransactionDetail;
         this.ctx = ctx;
     }
 
     @Override
     public HolderTransactionDetail onCreateViewHolder(ViewGroup viewGroup, int i){
-        View v = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_product_finish,viewGroup,false);
+        View v = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_product_proses,viewGroup,false);
         HolderTransactionDetail holderTransactionDetail = new HolderTransactionDetail(v);
         return holderTransactionDetail;
     }

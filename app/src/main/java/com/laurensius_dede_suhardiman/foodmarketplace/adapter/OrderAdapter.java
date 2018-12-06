@@ -18,31 +18,30 @@ import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
-import com.laurensius_dede_suhardiman.foodmarketplace.FoodMarketplace;
 import com.laurensius_dede_suhardiman.foodmarketplace.R;
+import com.laurensius_dede_suhardiman.foodmarketplace.RiwayatTransaksiPenjualan;
 import com.laurensius_dede_suhardiman.foodmarketplace.appcontroller.AppController;
 import com.laurensius_dede_suhardiman.foodmarketplace.model.Transaction;
 import com.laurensius_dede_suhardiman.foodmarketplace.model.TransactionDetail;
 
-import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.text.DecimalFormat;
 import java.util.List;
 import java.util.Random;
 
-public class KeranjangAdapter extends RecyclerView.Adapter<KeranjangAdapter.HolderTransaction> {
+public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.HolderTransaction> {
     List<Transaction> listTransaction;
     Context ctx;
 
-    public KeranjangAdapter(List<Transaction> listTransaction, Context ctx){
+    public OrderAdapter(List<Transaction> listTransaction, Context ctx){
         this.listTransaction = listTransaction;
         this.ctx = ctx;
     }
 
     @Override
     public HolderTransaction onCreateViewHolder(ViewGroup viewGroup, int i){
-        View v = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_keranjang,viewGroup,false);
+        View v = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_order,viewGroup,false);
         HolderTransaction holderTransaction = new HolderTransaction(v);
         return holderTransaction;
     }
@@ -51,7 +50,7 @@ public class KeranjangAdapter extends RecyclerView.Adapter<KeranjangAdapter.Hold
     public void onBindViewHolder(HolderTransaction holderTransaction,final int i){
         RecyclerView.LayoutManager mLayoutManager;
         List<TransactionDetail> transactionDetailList;
-        TransactionKeranjangAdapter transactionDetailAdapter = null;
+        TransactionOrderAdapter transactionOrderAdapter = null;
         transactionDetailList = listTransaction.get(i).getTransactionDetailList();
 
         holderTransaction.tvShopName.setText(listTransaction.get(i).getShop().getShopName());
@@ -74,16 +73,16 @@ public class KeranjangAdapter extends RecyclerView.Adapter<KeranjangAdapter.Hold
         holderTransaction.rvProductKeranjang.setHasFixedSize(true);
         mLayoutManager = new LinearLayoutManager(ctx);
         holderTransaction.rvProductKeranjang.setLayoutManager(mLayoutManager);
-        transactionDetailAdapter = new TransactionKeranjangAdapter(transactionDetailList,ctx);
-        transactionDetailAdapter.notifyDataSetChanged();
-        holderTransaction.rvProductKeranjang.setAdapter(transactionDetailAdapter);
-
-        holderTransaction.btnCheckOut.setOnClickListener(new View.OnClickListener() {
+        transactionOrderAdapter = new TransactionOrderAdapter(transactionDetailList,ctx);
+        transactionOrderAdapter.notifyDataSetChanged();
+        holderTransaction.rvProductKeranjang.setAdapter(transactionOrderAdapter);
+        holderTransaction.btnProses.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                requestTransactionUpdateStatus(listTransaction.get(i).getId(),"ON_TAGIHAN");
+                requestTransactionUpdateStatus(listTransaction.get(i).getId(),"ON_PROSES");
             }
         });
+        
     }
 
     @Override
@@ -122,26 +121,17 @@ public class KeranjangAdapter extends RecyclerView.Adapter<KeranjangAdapter.Hold
                     public void onResponse(JSONObject response) {
                         pDialog.dismiss();
                         Log.d(ctx.getResources().getString(R.string.debug),response.toString());
-                        try{
-                            String severity = response.getString("severity");
-                            if(severity.equals("success")){
-                                Intent intent = new Intent(ctx, FoodMarketplace.class);
-                                intent.putExtra("navigasi","riwayat");
-                                ctx.startActivity(intent);
-                                FoodMarketplace.activity.finish();
-                            }else{
-                                Toast.makeText(ctx,"Gagal Checkout. Silakan coba lagi!",Toast.LENGTH_LONG).show();
-                            }
-                        }catch (JSONException e){
-                            Toast.makeText(ctx,"Gagal Checkout. Silakan coba lagi!",Toast.LENGTH_LONG).show();
-                        }
+                        Intent intent = new Intent(ctx,RiwayatTransaksiPenjualan.class);
+                        intent.putExtra("tab","order");
+                        ctx.startActivity(intent);
+                        RiwayatTransaksiPenjualan.activity.finish();
                     }
                 },
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
                         pDialog.dismiss();
-                        Toast.makeText(ctx,"Gagal Checkout. Silakan coba lagi!",Toast.LENGTH_LONG).show();
+                        Toast.makeText(ctx,"Gagal Proses Pesanan. Silakan coba lagi!",Toast.LENGTH_LONG).show();
                     }
                 });
         AppController.getInstance().addToRequestQueue(jsonObjReq, transac_update_status);
@@ -151,7 +141,7 @@ public class KeranjangAdapter extends RecyclerView.Adapter<KeranjangAdapter.Hold
         CardView cvKeranjang;
         TextView tvShopName,tvTotalBayar;
         RecyclerView rvProductKeranjang;
-        Button btnCheckOut;
+        Button btnProses;
 
         HolderTransaction(View itemView){
             super(itemView);
@@ -159,7 +149,7 @@ public class KeranjangAdapter extends RecyclerView.Adapter<KeranjangAdapter.Hold
             tvShopName = (TextView)itemView.findViewById(R.id.tv_shop_name);
             rvProductKeranjang = (RecyclerView)itemView.findViewById(R.id.rv_product_keranjang);
             tvTotalBayar = (TextView)itemView.findViewById(R.id.tv_total_bayar);
-            btnCheckOut = (Button)itemView.findViewById(R.id.btn_checkout);
+            btnProses = (Button)itemView.findViewById(R.id.btn_proses);
         }
     }
 }

@@ -16,6 +16,7 @@ import android.widget.LinearLayout;
 import com.laurensius_dede_suhardiman.foodmarketplace.FoodMarketplace;
 import com.laurensius_dede_suhardiman.foodmarketplace.R;
 import com.laurensius_dede_suhardiman.foodmarketplace.RiwayatTransaksiPembelian;
+import com.laurensius_dede_suhardiman.foodmarketplace.RiwayatTransaksiPenjualan;
 
 public class FragmentRiwayat extends Fragment {
 
@@ -55,7 +56,9 @@ public class FragmentRiwayat extends Fragment {
             public void onClick(View v) {
                 if(FoodMarketplace.currentUser != null){
                     Intent intent = new Intent(getContext(),RiwayatTransaksiPembelian.class);
+                    intent.putExtra("tab","tagihan");
                     startActivity(intent);
+                    FoodMarketplace.activity.finish();
                 }else{
                     new AlertDialog.Builder(getContext())
                             .setTitle("Informasi")
@@ -67,8 +70,27 @@ public class FragmentRiwayat extends Fragment {
                                 }}).show().
                             getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(Color.parseColor("#3d9b2d"));
                 }
-
-
+            }
+        });
+        llRiwayatPenjualan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(FoodMarketplace.currentUser != null){
+                    Intent intent = new Intent(getContext(),RiwayatTransaksiPenjualan.class);
+                    intent.putExtra("tab","order");
+                    startActivity(intent);
+                    FoodMarketplace.activity.finish();
+                }else{
+                    new AlertDialog.Builder(getContext())
+                            .setTitle("Informasi")
+                            .setMessage("Anda tidak dapat mengakses menu ini sebelum login!")
+                            .setIcon(android.R.drawable.ic_menu_info_details)
+                            .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int whichButton) {
+                                    dialog.dismiss();
+                                }}).show().
+                            getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(Color.parseColor("#3d9b2d"));
+                }
             }
         });
     }

@@ -92,42 +92,9 @@ public class KonfirmasiAdapter extends RecyclerView.Adapter<KonfirmasiAdapter.Ho
     }
 
 
-//    public void requestTransactionUpdateStatus(String idTransaction,String newStatus){
-//        Random random = new Random();
-//        int rnd = random.nextInt(999999 - 99) + 99;
-//        String transac_update_status = ctx.getResources().getString(R.string.tag_request_transac_update_status);
-//        String url =ctx. getResources().getString(R.string.api)
-//                .concat(ctx.getResources().getString(R.string.endpoint_transac_update_status))
-//                .concat(idTransaction) //idTransaction
-//                .concat(ctx.getResources().getString(R.string.slash))
-//                .concat(newStatus) //val
-//                .concat(ctx.getResources().getString(R.string.slash))
-//                .concat(String.valueOf(rnd))
-//                .concat(ctx.getResources().getString(R.string.slash));
-//        final ProgressDialog pDialog = new ProgressDialog(ctx);
-//        pDialog.setMessage(ctx.getResources().getString(R.string.progress_loading));
-//        pDialog.show();
-//        JsonObjectRequest jsonObjReq = new JsonObjectRequest(Request.Method.GET,url, null,
-//                new Response.Listener<JSONObject>() {
-//                    @Override
-//                    public void onResponse(JSONObject response) {
-//                        pDialog.dismiss();
-//                        Log.d(ctx.getResources().getString(R.string.debug),response.toString());
-//                    }
-//                },
-//                new Response.ErrorListener() {
-//                    @Override
-//                    public void onErrorResponse(VolleyError error) {
-//                        pDialog.dismiss();
-//                        Toast.makeText(ctx,"Gagal Checkout. Silakan coba lagi!",Toast.LENGTH_LONG).show();
-//                    }
-//                });
-//        AppController.getInstance().addToRequestQueue(jsonObjReq, transac_update_status);
-//    }
-
     public static class HolderTransaction extends  RecyclerView.ViewHolder{
         CardView cvKeranjang;
-        TextView tvShopName,tvTotalBayar;
+        TextView tvShopName,tvTotalBayar,etKonfirmasi;
         RecyclerView rvProductKeranjang;
 
         HolderTransaction(View itemView){

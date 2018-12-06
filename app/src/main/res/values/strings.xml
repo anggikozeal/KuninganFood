@@ -28,6 +28,7 @@
     <string name="endpoint_register">verifikasi_register/</string>
     <string name="endpoint_shop_insert">shop_insert/</string>
     <string name="endpoint_product_insert">product_insert/</string>
+    <string name="endpoint_review_insert">review_insert/</string>
 
     <!--TAG-->
     <string name="debug"> ---- FOOD MARKETPLACE</string>
@@ -41,6 +42,7 @@
     <string name="tag_request_register">REGISTER</string>
     <string name="tag_request_shop_insert">SHOP_INSERT</string>
     <string name="tag_request_product_insert">PRODUCT_INSERT</string>
+    <string name="tag_request_review_insert">REVIEW_INSERT</string>
 
 
     <!--PROGRESS LOADING-->

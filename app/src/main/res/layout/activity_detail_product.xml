@@ -58,6 +58,13 @@
                 android:layout_height="wrap_content"
                 android:stepSize="1"
                 android:numStars="5"/>
+            <Button
+                android:id="@+id/btn_review"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#FFFFFF"
+                android:background="@color/colorPrimary"
+                android:text="BERIKAN ULASAN"/>
         </LinearLayout>
 
         <!--Preface Seller-->

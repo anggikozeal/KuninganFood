@@ -22,6 +22,8 @@ import com.laurensius_dede_suhardiman.foodmarketplace.FoodMarketplace;
 import com.laurensius_dede_suhardiman.foodmarketplace.R;
 import com.laurensius_dede_suhardiman.foodmarketplace.adapter.KonfirmasiAdapter;
 import com.laurensius_dede_suhardiman.foodmarketplace.adapter.FinishAdapter;
+import com.laurensius_dede_suhardiman.foodmarketplace.adapter.OrderAdapter;
+import com.laurensius_dede_suhardiman.foodmarketplace.adapter.ProsesAdapter;
 import com.laurensius_dede_suhardiman.foodmarketplace.adapter.TagihanAdapter;
 import com.laurensius_dede_suhardiman.foodmarketplace.appcontroller.AppController;
 import com.laurensius_dede_suhardiman.foodmarketplace.model.Product;
@@ -44,14 +46,14 @@ public class FragmentTransaksiPenjualan extends Fragment {
 
     RecyclerView.LayoutManager mLayoutManager;
     List<Transaction> listTransaction = new ArrayList<>();
-    private RecyclerView rvTransaksiPembelian;
-    private TagihanAdapter tagihanAdapter = null;
-    private KonfirmasiAdapter konfirmasiAdapter = null;
-    private FinishAdapter prosesAdapter = null;
+    private RecyclerView rvTransaksiPenjualan;
+    private OrderAdapter orderAdapter = null;
+    private ProsesAdapter prosesAdapter = null;
+    private FinishAdapter finishAdapter= null;
 
-    private int onTagihan = 1;
-    private int onKonfirmasi = 2;
-    private int onProses = 3;
+    private int onKonfirmasi = 1;
+    private int onProses = 2;
+    private int onKirim = 3;
     private int onFinish = 4;
 
     private int stage;
@@ -76,11 +78,11 @@ public class FragmentTransaksiPenjualan extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View inflaterTransaksiPembelian = inflater.inflate(R.layout.fragment_transaksi_pembelian, container, false);
+        View inflaterTransaksiPembelian = inflater.inflate(R.layout.fragment_transaksi_penjualan, container, false);
         llFailed = (LinearLayout)inflaterTransaksiPembelian.findViewById(R.id.ll_failed);
         llNoData = (LinearLayout)inflaterTransaksiPembelian.findViewById(R.id.ll_no_data);
         llSuccess = (LinearLayout)inflaterTransaksiPembelian.findViewById(R.id.ll_success);
-        rvTransaksiPembelian = (RecyclerView)inflaterTransaksiPembelian.findViewById(R.id.rv_transaksi);
+        rvTransaksiPenjualan = (RecyclerView)inflaterTransaksiPembelian.findViewById(R.id.rv_transaksi);
         return inflaterTransaksiPembelian;
     }
 
@@ -115,49 +117,49 @@ public class FragmentTransaksiPenjualan extends Fragment {
     }
 
     public void dataToView(){
-        if(stage==onTagihan){
-            listTransaction.clear();
-            requestTransactionStage("ON_TAGIHAN");
-            rvTransaksiPembelian.setAdapter(null);
-            rvTransaksiPembelian.setHasFixedSize(true);
-            mLayoutManager = new LinearLayoutManager(getContext());
-            rvTransaksiPembelian.setLayoutManager(mLayoutManager);
-            tagihanAdapter = new TagihanAdapter(listTransaction,getActivity());
-            tagihanAdapter.notifyDataSetChanged();
-            rvTransaksiPembelian.setAdapter(tagihanAdapter);
-        }else
         if(stage==onKonfirmasi){
             listTransaction.clear();
             requestTransactionStage("ON_KONFIRMASI");
-            rvTransaksiPembelian.setAdapter(null);
-            rvTransaksiPembelian.setHasFixedSize(true);
+            rvTransaksiPenjualan.setAdapter(null);
+            rvTransaksiPenjualan.setHasFixedSize(true);
             mLayoutManager = new LinearLayoutManager(getContext());
-            rvTransaksiPembelian.setLayoutManager(mLayoutManager);
-            konfirmasiAdapter = new KonfirmasiAdapter(listTransaction,getActivity());
-            konfirmasiAdapter.notifyDataSetChanged();
-            rvTransaksiPembelian.setAdapter(konfirmasiAdapter);
+            rvTransaksiPenjualan.setLayoutManager(mLayoutManager);
+            orderAdapter = new OrderAdapter(listTransaction,getActivity());
+            orderAdapter.notifyDataSetChanged();
+            rvTransaksiPenjualan.setAdapter(orderAdapter);
         }else
         if(stage==onProses){
             listTransaction.clear();
             requestTransactionStage("ON_PROSES");
-            rvTransaksiPembelian.setAdapter(null);
-            rvTransaksiPembelian.setHasFixedSize(true);
+            rvTransaksiPenjualan.setAdapter(null);
+            rvTransaksiPenjualan.setHasFixedSize(true);
             mLayoutManager = new LinearLayoutManager(getContext());
-            rvTransaksiPembelian.setLayoutManager(mLayoutManager);
-            prosesAdapter = new FinishAdapter(listTransaction,getActivity());
+            rvTransaksiPenjualan.setLayoutManager(mLayoutManager);
+            prosesAdapter = new ProsesAdapter(listTransaction,getActivity());
             prosesAdapter.notifyDataSetChanged();
-            rvTransaksiPembelian.setAdapter(prosesAdapter);
+            rvTransaksiPenjualan.setAdapter(prosesAdapter);
+        }else
+        if(stage==onKirim){
+            listTransaction.clear();
+            requestTransactionStage("ON_KIRIM");
+            rvTransaksiPenjualan.setAdapter(null);
+            rvTransaksiPenjualan.setHasFixedSize(true);
+            mLayoutManager = new LinearLayoutManager(getContext());
+            rvTransaksiPenjualan.setLayoutManager(mLayoutManager);
+            prosesAdapter = new ProsesAdapter(listTransaction,getActivity());
+            prosesAdapter.notifyDataSetChanged();
+            rvTransaksiPenjualan.setAdapter(prosesAdapter);
         }else
         if(stage==onFinish){
             listTransaction.clear();
             requestTransactionStage("ON_FINISH");
-            rvTransaksiPembelian.setAdapter(null);
-            rvTransaksiPembelian.setHasFixedSize(true);
+            rvTransaksiPenjualan.setAdapter(null);
+            rvTransaksiPenjualan.setHasFixedSize(true);
             mLayoutManager = new LinearLayoutManager(getContext());
-            rvTransaksiPembelian.setLayoutManager(mLayoutManager);
-            tagihanAdapter = new TagihanAdapter(listTransaction,getActivity());
-            tagihanAdapter.notifyDataSetChanged();
-            rvTransaksiPembelian.setAdapter(tagihanAdapter);
+            rvTransaksiPenjualan.setLayoutManager(mLayoutManager);
+            finishAdapter = new FinishAdapter(listTransaction,getActivity());
+            finishAdapter.notifyDataSetChanged();
+            rvTransaksiPenjualan.setAdapter(finishAdapter);
         }
     }
 
@@ -167,9 +169,9 @@ public class FragmentTransaksiPenjualan extends Fragment {
         String transac_by_status = getResources().getString(R.string.tag_request_transac_by_status);
         String url = getResources().getString(R.string.api)
                 .concat(getResources().getString(R.string.endpoint_transac))
-                .concat("id_user") //key
+                .concat("id_shop") //key
                 .concat(getResources().getString(R.string.slash))
-                .concat(FoodMarketplace.currentUser.getId()) //val
+                .concat(FoodMarketplace.currentShop.getId()) //val
                 .concat(getResources().getString(R.string.slash))
                 .concat(levelStage) //status
                 .concat(getResources().getString(R.string.slash))
@@ -284,17 +286,14 @@ public class FragmentTransaksiPenjualan extends Fragment {
             llFailed.setVisibility(View.VISIBLE);
             llSuccess.setVisibility(View.GONE);
         }
-        if(stage==onTagihan){
-            tagihanAdapter.notifyDataSetChanged();
-        }else
         if(stage==onKonfirmasi){
-            konfirmasiAdapter.notifyDataSetChanged();
+            orderAdapter.notifyDataSetChanged();
         }else
-        if(stage==onProses){
+        if(stage==onProses || stage==onKirim){
             prosesAdapter.notifyDataSetChanged();
         }else
         if(stage==onFinish){
-
+            finishAdapter.notifyDataSetChanged();
         }
 
     }

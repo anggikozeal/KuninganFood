@@ -22,6 +22,7 @@ import com.laurensius_dede_suhardiman.foodmarketplace.FoodMarketplace;
 import com.laurensius_dede_suhardiman.foodmarketplace.R;
 import com.laurensius_dede_suhardiman.foodmarketplace.adapter.KonfirmasiAdapter;
 import com.laurensius_dede_suhardiman.foodmarketplace.adapter.FinishAdapter;
+import com.laurensius_dede_suhardiman.foodmarketplace.adapter.ProsesAdapter;
 import com.laurensius_dede_suhardiman.foodmarketplace.adapter.TagihanAdapter;
 import com.laurensius_dede_suhardiman.foodmarketplace.appcontroller.AppController;
 import com.laurensius_dede_suhardiman.foodmarketplace.model.Product;
@@ -47,7 +48,8 @@ public class FragmentTransaksiPembelian extends Fragment {
     private RecyclerView rvTransaksiPembelian;
     private TagihanAdapter tagihanAdapter = null;
     private KonfirmasiAdapter konfirmasiAdapter = null;
-    private FinishAdapter prosesAdapter = null;
+    private ProsesAdapter prosesAdapter = null;
+    private FinishAdapter finishAdapter = null;
 
     private int onTagihan = 1;
     private int onKonfirmasi = 2;
@@ -140,11 +142,12 @@ public class FragmentTransaksiPembelian extends Fragment {
         if(stage==onProses){
             listTransaction.clear();
             requestTransactionStage("ON_PROSES");
+            requestTransactionStage("ON_KIRIM");
             rvTransaksiPembelian.setAdapter(null);
             rvTransaksiPembelian.setHasFixedSize(true);
             mLayoutManager = new LinearLayoutManager(getContext());
             rvTransaksiPembelian.setLayoutManager(mLayoutManager);
-            prosesAdapter = new FinishAdapter(listTransaction,getActivity());
+            prosesAdapter = new ProsesAdapter(listTransaction,getActivity());
             prosesAdapter.notifyDataSetChanged();
             rvTransaksiPembelian.setAdapter(prosesAdapter);
         }else
@@ -155,9 +158,9 @@ public class FragmentTransaksiPembelian extends Fragment {
             rvTransaksiPembelian.setHasFixedSize(true);
             mLayoutManager = new LinearLayoutManager(getContext());
             rvTransaksiPembelian.setLayoutManager(mLayoutManager);
-            tagihanAdapter = new TagihanAdapter(listTransaction,getActivity());
-            tagihanAdapter.notifyDataSetChanged();
-            rvTransaksiPembelian.setAdapter(tagihanAdapter);
+            finishAdapter = new FinishAdapter(listTransaction,getActivity());
+            finishAdapter.notifyDataSetChanged();
+            rvTransaksiPembelian.setAdapter(finishAdapter);
         }
     }
 
@@ -294,7 +297,7 @@ public class FragmentTransaksiPembelian extends Fragment {
             prosesAdapter.notifyDataSetChanged();
         }else
         if(stage==onFinish){
-
+            finishAdapter.notifyDataSetChanged();
         }
 
     }

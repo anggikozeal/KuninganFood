@@ -41,8 +41,9 @@ public class DetailProduct extends AppCompatActivity {
 
     private ImageView ivProductImage;
     private TextView tvProductName, tvProductPrice, tvProductRating, tvProductStatus, tvShopName, tvShopAddress, tvProductDescription;
-    private Button btnKeranjang;
+    private Button btnKeranjang, btnReview;
     private RecyclerView rvProductReview;
+
     private RatingBar rbRating;
     private EditText etQty, etNote;
     private Product productIntent;
@@ -65,6 +66,23 @@ public class DetailProduct extends AppCompatActivity {
         etQty = (EditText)findViewById(R.id.et_qty);
         etNote = (EditText)findViewById(R.id.et_note);
 
+
+        intent = getIntent();
+        productIntent = (Product)intent.getSerializableExtra("productObject");
+        dataToView(productIntent);
+
+
+        btnReview = (Button)findViewById(R.id.btn_review);
+        btnReview.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(DetailProduct.this,ProductReview.class);
+                intent.putExtra("productObject", productIntent);
+                startActivity(intent);
+                finish();
+            }
+        });
+
         btnKeranjang.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -72,9 +90,12 @@ public class DetailProduct extends AppCompatActivity {
             }
         });
 
-        intent = getIntent();
-        productIntent = (Product)intent.getSerializableExtra("productObject");
-        dataToView(productIntent);
+    }
+
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
     }
 
     public void dataToView(Product product){

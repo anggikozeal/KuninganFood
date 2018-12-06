@@ -59,11 +59,11 @@
                 android:layout_height="wrap_content"
                 android:background="#CCCCCC">
                 <TextView
-                    android:id="@+id/et_konfirmasi"
+                    android:id="@+id/tv_status"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="10dp"
-                    android:text="MENUNGGU DIPROSES PELAPAK"
+                    android:text="TRANSAKSI SELESAI"
                     android:textStyle="bold"
                     android:textSize="7pt"
                     android:textAlignment="center"

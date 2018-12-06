@@ -253,7 +253,8 @@ public class KonfirmasiPembayaran extends AppCompatActivity {
                         .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int whichButton) {
                                 dialog.dismiss();
-                                Intent intent = new Intent(KonfirmasiPembayaran.this,FoodMarketplace.class);
+                                Intent intent = new Intent(KonfirmasiPembayaran.this,RiwayatTransaksiPembelian.class);
+                                intent.putExtra("tab","dibayar");
                                 startActivity(intent);
                                 finish();
                             }}).show().

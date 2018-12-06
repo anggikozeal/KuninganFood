@@ -1,5 +1,7 @@
 package com.laurensius_dede_suhardiman.foodmarketplace;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.support.design.widget.TabLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -17,10 +19,15 @@ public class RiwayatTransaksiPembelian extends AppCompatActivity {
     private SectionsPagerAdapter mSectionsPagerAdapter;
     private ViewPager mViewPager;
 
+    public static Activity activity;
+    Intent intent;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_riwayat_transaksi_pembelian);
+
+        activity = this;
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -33,8 +40,29 @@ public class RiwayatTransaksiPembelian extends AppCompatActivity {
 
         mViewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
         tabLayout.addOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener(mViewPager));
+
+        intent = getIntent();
+        if(intent.getStringExtra("tab").equals("tagihan")){
+            mViewPager.setCurrentItem(0);
+        }else
+        if(intent.getStringExtra("tab").equals("dibayar")){
+            mViewPager.setCurrentItem(1);
+        }else
+        if(intent.getStringExtra("tab").equals("proses")){
+            mViewPager.setCurrentItem(2);
+        }else
+        if(intent.getStringExtra("tab").equals("selesai")){
+            mViewPager.setCurrentItem(3);
+        }
     }
 
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(RiwayatTransaksiPembelian.this,FoodMarketplace.class);
+        intent.putExtra("navigasi","riwayat");
+        startActivity(intent);
+        finish();
+    }
 
     public class SectionsPagerAdapter extends FragmentPagerAdapter {
 

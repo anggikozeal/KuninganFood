@@ -18,18 +18,18 @@ import com.laurensius_dede_suhardiman.foodmarketplace.model.TransactionDetail;
 
 import java.util.List;
 
-public class TransactionFinishAdapter extends RecyclerView.Adapter<TransactionFinishAdapter.HolderTransactionDetail> {
+public class TransactionOrderAdapter extends RecyclerView.Adapter<TransactionOrderAdapter.HolderTransactionDetail> {
     List<TransactionDetail> listTransactionDetail;
     Context ctx;
 
-    public TransactionFinishAdapter(List<TransactionDetail> listTransactionDetail, Context ctx){
+    public TransactionOrderAdapter(List<TransactionDetail> listTransactionDetail, Context ctx){
         this.listTransactionDetail = listTransactionDetail;
         this.ctx = ctx;
     }
 
     @Override
     public HolderTransactionDetail onCreateViewHolder(ViewGroup viewGroup, int i){
-        View v = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_product_finish,viewGroup,false);
+        View v = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_product_order,viewGroup,false);
         HolderTransactionDetail holderTransactionDetail = new HolderTransactionDetail(v);
         return holderTransactionDetail;
     }
@@ -75,7 +75,10 @@ public class TransactionFinishAdapter extends RecyclerView.Adapter<TransactionFi
             tvProductName = (TextView)itemView.findViewById(R.id.tv_product_name); //
             tvProductPrice = (TextView)itemView.findViewById(R.id.tv_product_price); //
             tvProductDiscount = (TextView)itemView.findViewById(R.id.tv_product_discount); //
+            tvMinus = (TextView)itemView.findViewById(R.id.tv_minus);
+            tvPlus = (TextView)itemView.findViewById(R.id.tv_plus);
             etQty = (EditText)itemView.findViewById(R.id.et_qty);
+            ivDelete = (ImageView)itemView.findViewById(R.id.iv_delete);
         }
     }
 }

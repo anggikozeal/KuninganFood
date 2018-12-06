@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -47,6 +48,7 @@ public class FoodMarketplace extends AppCompatActivity {
 
         loadSharedPreferences();
 
+
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -80,10 +82,27 @@ public class FoodMarketplace extends AppCompatActivity {
             }
         });
 
-        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.replace(R.id.fl_master, new FragmentBeranda());
-        transaction.commit();
+        Intent intent = getIntent();
+        final String navigasi = intent.getStringExtra("navigasi");
 
+
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        if(navigasi == null || navigasi.equals("beranda")){
+            transaction.replace(R.id.fl_master, new FragmentBeranda());
+        }else
+        if(navigasi.equals("keranjang")){
+            transaction.replace(R.id.fl_master, new FragmentKeranjang());
+        }else
+        if(navigasi.equals("riwayat")){
+            transaction.replace(R.id.fl_master, new FragmentRiwayat());
+        }else
+        if(navigasi.equals("notifikasi")){
+//            transaction.replace(R.id.fl_master, new FragmentNot());
+        }else
+        if(navigasi.equals("akun")){
+            transaction.replace(R.id.fl_master, new FragmentAkun());
+        }
+        transaction.commit();
         dialBox = createDialogBox();
     }
 

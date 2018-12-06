@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProductReview">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <ImageView
+            android:id="@+id/iv_product_image"
+            android:layout_width="match_parent"
+            android:layout_height="225dp"
+            android:scaleType="fitXY"/>
+        <!--Preface Product-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:background="#FFFFFF"
+            android:layout_marginBottom="10dp"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/tv_product_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="8pt"
+                android:textStyle="bold"
+                android:textColor="#666666"
+                android:text="Product Name"/>
+            <TextView
+                android:id="@+id/tv_product_price"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="7pt"
+                android:textColor="#666666"
+                android:text="Price IDR : 0.000,00"/>
+            <TextView
+                android:id="@+id/tv_product_status"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="7pt"
+                android:textColor="#666666"
+                android:text="Status Tersedia / Tidak Tersedia"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="8pt"
+                android:textStyle="bold"
+                android:layout_marginTop="16dp"
+                android:textColor="#666666"
+                android:text="Berikan Rating :"/>
+            <RatingBar
+                android:id="@+id/rb_rating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:stepSize="1"
+                android:numStars="5"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="8pt"
+                android:textStyle="bold"
+                android:layout_marginTop="16dp"
+                android:textColor="#666666"
+                android:text="Berikan Ulasan Produk :"/>
+            <EditText
+                android:id="@+id/et_review"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Ulasan Produk"
+                android:inputType="textMultiLine"
+                android:gravity="top|left"
+                android:lines="8"/>
+            <Button
+                android:id="@+id/btn_review"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Kirim Penilaian / Ulasan"
+                android:background="@color/colorPrimary"
+                android:textColor="#FFFFFF"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

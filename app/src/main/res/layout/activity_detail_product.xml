@@ -118,6 +118,7 @@
 
         <!--Preface Review-->
         <LinearLayout
+            android:id="@+id/ll_review"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="5dp"
@@ -134,7 +135,7 @@
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/rv_product_review"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="225dp"
                 android:textSize="7pt"
                 android:textColor="#666666"
                 android:text="Product "/>

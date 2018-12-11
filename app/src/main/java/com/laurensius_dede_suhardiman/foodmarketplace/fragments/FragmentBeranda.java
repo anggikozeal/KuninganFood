@@ -3,12 +3,15 @@ package com.laurensius_dede_suhardiman.foodmarketplace.fragments;
 import android.Manifest;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -26,6 +29,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.laurensius_dede_suhardiman.foodmarketplace.DetailProduct;
 import com.laurensius_dede_suhardiman.foodmarketplace.R;
+import com.laurensius_dede_suhardiman.foodmarketplace.ResultSearch;
 import com.laurensius_dede_suhardiman.foodmarketplace.adapter.ProductAdapter;
 import com.laurensius_dede_suhardiman.foodmarketplace.appcontroller.AppController;
 import com.laurensius_dede_suhardiman.foodmarketplace.customlistener.CustomListener;
@@ -96,6 +100,27 @@ public class FragmentBeranda extends Fragment {
         productAdapter.notifyDataSetChanged();
         rvProductLatest.setAdapter(productAdapter);
         requestProductLatest();
+
+        btnCari.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(etCari.getText().toString().equals("") || etCari.getText().toString() == null){
+                    new AlertDialog.Builder(getContext())
+                            .setTitle("Whoops . . .")
+                            .setMessage("Silakan masukkan parameter / kata kunci pencarian!")
+                            .setIcon(android.R.drawable.stat_notify_error)
+                            .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int whichButton) {
+                                    dialog.dismiss();
+                                }}).show().
+                            getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(Color.parseColor("#3d9b2d"));
+                }else{
+                    Intent intent = new Intent(getContext(),ResultSearch.class);
+                    intent.putExtra("val",etCari.getText().toString());
+                    startActivity(intent);
+                }
+            }
+        });
     }
 
     @Override

@@ -49,7 +49,8 @@
         <activity android:name=".KonfirmasiPembayaran" />
         <activity android:name=".BukaToko" />
         <activity android:name=".TambahProduk" />
-        <activity android:name=".ProductReview"></activity>
+        <activity android:name=".ProductReview" />
+        <activity android:name=".ResultSearch"></activity>
     </application>
 
 </manifest>

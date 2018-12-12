@@ -32,6 +32,7 @@
     <string name="endpoint_product_by_shop">product_by_shop/</string>
     <string name="endpoint_product_update">product_update/</string>
     <string name="endpoint_review_insert">review_insert/</string>
+    <string name="endpoint_notification_by_user">notification_by_user/</string>
     <string name="endpoint_review">review/</string>
 
     <!--TAG-->
@@ -50,6 +51,7 @@
     <string name="tag_request_product_by_shop">PRODUCT_BY_SHOP</string>
     <string name="tag_request_product_update">PRODUCT_BY_SHOP</string>
     <string name="tag_request_review_insert">REVIEW_INSERT</string>
+    <string name="tag_request_notification_by_user">NOTIFICATION_USER</string>
     <string name="tag_request_review">REVIEW</string>
 
 

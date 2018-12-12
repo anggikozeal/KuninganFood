@@ -20,6 +20,7 @@ import android.widget.Toast;
 import com.laurensius_dede_suhardiman.foodmarketplace.fragments.FragmentAkun;
 import com.laurensius_dede_suhardiman.foodmarketplace.fragments.FragmentBeranda;
 import com.laurensius_dede_suhardiman.foodmarketplace.fragments.FragmentKeranjang;
+import com.laurensius_dede_suhardiman.foodmarketplace.fragments.FragmentNotifikasi;
 import com.laurensius_dede_suhardiman.foodmarketplace.fragments.FragmentRiwayat;
 import com.laurensius_dede_suhardiman.foodmarketplace.model.Product;
 import com.laurensius_dede_suhardiman.foodmarketplace.model.Shop;
@@ -65,7 +66,7 @@ public class FoodMarketplace extends AppCompatActivity {
                         selectedFragment = new FragmentRiwayat();
                         break;
                     case R.id.navigation_notifikasi:
-//                        selectedFragment = new FragmentAbout();
+                        selectedFragment = new FragmentNotifikasi();
                         break;
                     case R.id.navigation_akun:
                         selectedFragment = new FragmentAkun();
@@ -97,7 +98,7 @@ public class FoodMarketplace extends AppCompatActivity {
             transaction.replace(R.id.fl_master, new FragmentRiwayat());
         }else
         if(navigasi.equals("notifikasi")){
-//            transaction.replace(R.id.fl_master, new FragmentNot());
+            transaction.replace(R.id.fl_master, new FragmentNotifikasi());
         }else
         if(navigasi.equals("akun")){
             transaction.replace(R.id.fl_master, new FragmentAkun());

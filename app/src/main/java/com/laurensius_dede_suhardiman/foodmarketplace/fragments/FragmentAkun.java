@@ -21,6 +21,7 @@ import com.laurensius_dede_suhardiman.foodmarketplace.FoodMarketplace;
 import com.laurensius_dede_suhardiman.foodmarketplace.Login;
 import com.laurensius_dede_suhardiman.foodmarketplace.R;
 import com.laurensius_dede_suhardiman.foodmarketplace.Register;
+import com.laurensius_dede_suhardiman.foodmarketplace.ServiceNotification;
 import com.laurensius_dede_suhardiman.foodmarketplace.ShopProduct;
 import com.laurensius_dede_suhardiman.foodmarketplace.AddProduct;
 
@@ -112,7 +113,7 @@ public class FragmentAkun extends Fragment {
             public void onClick(View v) {
             new AlertDialog.Builder(getContext())
                 .setTitle("Konfirmasi")
-                .setMessage("APakah anda akan keluar dari sesi pad aplikasi ini?")
+                .setMessage("Apakah anda akan keluar dari sesi pada aplikasi?")
                 .setIcon(android.R.drawable.ic_menu_info_details)
                 .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int whichButton) {
@@ -123,6 +124,7 @@ public class FragmentAkun extends Fragment {
                         editorPreferences.commit();
                         FoodMarketplace.currentUser = null;
                         FoodMarketplace.currentShop = null;
+                        FoodMarketplace.activity.stopService(new Intent(getContext(), ServiceNotification.class));
                         Intent intent = new Intent(getContext(),FoodMarketplace.class);
                         startActivity(intent);
                         FoodMarketplace.activity.finish();

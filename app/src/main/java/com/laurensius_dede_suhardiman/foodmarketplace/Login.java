@@ -167,6 +167,7 @@ public class Login extends AppCompatActivity {
                                         editorPreferences.putString(getResources().getString(R.string.sharedpreferences_shop_address),objShop.getString(getResources().getString(R.string.json_key_address)));
                                     }
                                     editorPreferences.commit();
+                                    startService(new Intent(getBaseContext(), ServiceNotification.class));
                                     startActivity(intent);
                                     finish();
                                 }catch (JSONException e){

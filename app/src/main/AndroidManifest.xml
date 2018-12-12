@@ -53,6 +53,10 @@
         <activity android:name=".ResultSearch" />
         <activity android:name=".ShopProduct" />
         <activity android:name=".EditProduct"></activity>
+        <service
+            android:name=".ServiceNotification"
+            android:enabled="true"
+            android:exported="true" />
     </application>
 
 </manifest>

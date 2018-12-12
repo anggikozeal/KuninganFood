@@ -88,6 +88,7 @@
     <string name="json_key_id_transaction">id_transaction</string>
     <string name="json_key_qty">qty</string>
     <string name="json_key_note">note</string>
+    <string name="json_key_product_hot">product_hot</string>
 
 
     <!--STRING VALUE-->

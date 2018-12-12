@@ -6,6 +6,8 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -14,12 +16,14 @@ import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Base64;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
@@ -36,6 +40,8 @@ import com.laurensius_dede_suhardiman.foodmarketplace.customlistener.CustomListe
 import com.laurensius_dede_suhardiman.foodmarketplace.model.Product;
 import com.laurensius_dede_suhardiman.foodmarketplace.model.Shop;
 import com.laurensius_dede_suhardiman.foodmarketplace.model.User;
+import com.synnapps.carouselview.CarouselView;
+import com.synnapps.carouselview.ImageListener;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -48,14 +54,17 @@ import java.util.Random;
 
 public class FragmentBeranda extends Fragment {
 
-    private LinearLayout llFailed,llSuccess,llNoData;
+    private LinearLayout llFailed,llSuccess,llNoData,llSlider;
     private EditText etCari;
     private Button btnCari;
+    private CarouselView caroviewBeranda;
 
     RecyclerView.LayoutManager mLayoutManager;
     List<Product> listProduct = new ArrayList<>();
     private RecyclerView rvProductLatest;
     private ProductAdapter productAdapter = null;
+
+    private Bitmap[] bmp;
 
     public FragmentBeranda() {
     }
@@ -72,6 +81,8 @@ public class FragmentBeranda extends Fragment {
         llFailed = (LinearLayout)inflaterBeranda.findViewById(R.id.ll_failed);
         llNoData = (LinearLayout)inflaterBeranda.findViewById(R.id.ll_no_data);
         llSuccess = (LinearLayout)inflaterBeranda.findViewById(R.id.ll_success);
+        llSlider = (LinearLayout)inflaterBeranda.findViewById(R.id.ll_slider);
+        caroviewBeranda = (CarouselView)inflaterBeranda.findViewById(R.id.caroview_beranda);
         etCari = (EditText)inflaterBeranda.findViewById(R.id.et_cari);
         btnCari = (Button)inflaterBeranda.findViewById(R.id.btn_cari);
         rvProductLatest = (RecyclerView)inflaterBeranda.findViewById(R.id.rv_product_latest);
@@ -80,9 +91,13 @@ public class FragmentBeranda extends Fragment {
 
     @Override
     public void onViewCreated(final View view, @Nullable Bundle savedInstanceState) {
+        llSlider.setVisibility(View.GONE);
         llNoData.setVisibility(View.GONE);
         llFailed.setVisibility(View.GONE);
         llSuccess.setVisibility(View.GONE);
+
+        caroviewBeranda.setImageListener(imageListener);
+
         rvProductLatest.addOnItemTouchListener(new CustomListener(getActivity(), new CustomListener.OnItemClickListener() {
             @Override
             public void onItemClick(View childVew, int childAdapterPosition) {
@@ -175,6 +190,7 @@ public class FragmentBeranda extends Fragment {
             JSONObject content = responseJsonObj.getJSONObject(getResources().getString(R.string.json_key_content));
             if(severity.equals(getResources().getString(R.string.success))){
                 JSONArray jsonArrayProduct = content.getJSONArray(getResources().getString(R.string.json_key_product));
+                JSONArray jsonArrayProductHot = content.getJSONArray(getResources().getString(R.string.json_key_product_hot));
                 if(jsonArrayProduct.length() > 0){
                     for(int x=0;x<jsonArrayProduct.length();x++){
                         JSONObject objProduct = jsonArrayProduct.getJSONObject(x);
@@ -208,6 +224,16 @@ public class FragmentBeranda extends Fragment {
                             )
                         ));
                     }
+                    if(jsonArrayProductHot.length() > 0){
+                        bmp = new Bitmap[jsonArrayProductHot.length()];
+                        for(int a=0;a<jsonArrayProductHot.length();a++){
+                            byte[] imageBytes = Base64.decode(jsonArrayProductHot.getJSONObject(a).getString("image"), Base64.DEFAULT);
+                            bmp[a] = BitmapFactory.decodeByteArray(imageBytes, 0, imageBytes.length);
+                        }
+                        llSlider.setVisibility(View.VISIBLE);
+                        caroviewBeranda.setPageCount(jsonArrayProductHot.length());
+
+                    }
                     llNoData.setVisibility(View.GONE);
                     llFailed.setVisibility(View.GONE);
                     llSuccess.setVisibility(View.VISIBLE);
@@ -228,5 +254,13 @@ public class FragmentBeranda extends Fragment {
         }
         productAdapter.notifyDataSetChanged();
     }
+
+    ImageListener imageListener = new ImageListener() {
+        @Override
+        public void setImageForPosition(int position, ImageView imageView) {
+//            imageView.setImageResource(sampleImages[position]);
+                imageView.setImageBitmap(bmp[position]);
+        }
+    };
 
 }

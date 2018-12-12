@@ -48,9 +48,11 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".KonfirmasiPembayaran" />
         <activity android:name=".BukaToko" />
-        <activity android:name=".TambahProduk" />
+        <activity android:name=".AddProduct" />
         <activity android:name=".ProductReview" />
-        <activity android:name=".ResultSearch"></activity>
+        <activity android:name=".ResultSearch" />
+        <activity android:name=".ShopProduct" />
+        <activity android:name=".EditProduct"></activity>
     </application>
 
 </manifest>

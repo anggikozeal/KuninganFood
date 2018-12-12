@@ -5,7 +5,6 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -17,13 +16,13 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.google.android.gms.vision.text.Line;
 import com.laurensius_dede_suhardiman.foodmarketplace.BukaToko;
 import com.laurensius_dede_suhardiman.foodmarketplace.FoodMarketplace;
 import com.laurensius_dede_suhardiman.foodmarketplace.Login;
 import com.laurensius_dede_suhardiman.foodmarketplace.R;
 import com.laurensius_dede_suhardiman.foodmarketplace.Register;
-import com.laurensius_dede_suhardiman.foodmarketplace.TambahProduk;
+import com.laurensius_dede_suhardiman.foodmarketplace.ShopProduct;
+import com.laurensius_dede_suhardiman.foodmarketplace.AddProduct;
 
 public class FragmentAkun extends Fragment {
 
@@ -32,7 +31,7 @@ public class FragmentAkun extends Fragment {
 
     private LinearLayout llNoSession, llSession;
     private LinearLayout llMenuKelolaAkun, llMenuLogout;
-    private LinearLayout llMenuKelolaToko, llMenuTambahDagangan;
+    private LinearLayout llMenuKelolaToko, llMenuTambahDagangan, llMenuKelolaDagangan ;
 
     private Button btnLogin,btnRegister;
 
@@ -84,6 +83,7 @@ public class FragmentAkun extends Fragment {
 
         llMenuKelolaToko = (LinearLayout)inflaterAkun.findViewById(R.id.ll_menu_kelola_toko);
         llMenuTambahDagangan =  (LinearLayout)inflaterAkun.findViewById(R.id.ll_menu_tambah_dagangan);
+        llMenuKelolaDagangan =  (LinearLayout)inflaterAkun.findViewById(R.id.ll_menu_kelola_dagangan);
 
         return inflaterAkun;
     }
@@ -122,6 +122,7 @@ public class FragmentAkun extends Fragment {
                         editorPreferences.clear();
                         editorPreferences.commit();
                         FoodMarketplace.currentUser = null;
+                        FoodMarketplace.currentShop = null;
                         Intent intent = new Intent(getContext(),FoodMarketplace.class);
                         startActivity(intent);
                         FoodMarketplace.activity.finish();
@@ -167,7 +168,7 @@ public class FragmentAkun extends Fragment {
             @Override
             public void onClick(View v) {
                 if(FoodMarketplace.currentShop != null){
-                    Intent intent = new Intent(getContext(),TambahProduk.class);
+                    Intent intent = new Intent(getContext(),AddProduct.class);
                     intent.putExtra("idShop",FoodMarketplace.currentShop.getId());
                     startActivity(intent);
                 }else{
@@ -184,6 +185,31 @@ public class FragmentAkun extends Fragment {
                 }
             }
         });
+
+        //
+        llMenuKelolaDagangan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(FoodMarketplace.currentShop != null){
+                    Intent intent = new Intent(getContext(),ShopProduct.class);
+                    intent.putExtra("idShop",FoodMarketplace.currentShop.getId());
+                    startActivity(intent);
+                }else{
+                    new AlertDialog.Builder(getContext())
+                            .setTitle("Konfirmasi")
+                            .setMessage("Buka toko untuk mulai berjualan?")
+                            .setIcon(android.R.drawable.ic_menu_info_details)
+                            .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int whichButton) {
+                                    dialog.dismiss();
+
+                                }}).show().
+                            getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(Color.parseColor("#3d9b2d"));
+                }
+            }
+        });
+
+
 
 
 

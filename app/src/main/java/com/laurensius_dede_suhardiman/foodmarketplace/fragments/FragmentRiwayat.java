@@ -75,7 +75,7 @@ public class FragmentRiwayat extends Fragment {
         llRiwayatPenjualan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(FoodMarketplace.currentUser != null){
+                if(FoodMarketplace.currentUser != null && FoodMarketplace.currentShop != null){
                     Intent intent = new Intent(getContext(),RiwayatTransaksiPenjualan.class);
                     intent.putExtra("tab","order");
                     startActivity(intent);
@@ -83,7 +83,7 @@ public class FragmentRiwayat extends Fragment {
                 }else{
                     new AlertDialog.Builder(getContext())
                             .setTitle("Informasi")
-                            .setMessage("Anda tidak dapat mengakses menu ini sebelum login!")
+                            .setMessage("Anda hanya dapat mengakses halaman ini setela login atau setelah memiliki toko!")
                             .setIcon(android.R.drawable.ic_menu_info_details)
                             .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
                                 public void onClick(DialogInterface dialog, int whichButton) {

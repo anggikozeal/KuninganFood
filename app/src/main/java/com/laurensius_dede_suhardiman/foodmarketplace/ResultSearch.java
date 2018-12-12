@@ -1,7 +1,10 @@
 package com.laurensius_dede_suhardiman.foodmarketplace;
 
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
@@ -80,6 +83,24 @@ public class ResultSearch extends AppCompatActivity {
         rvProduct.setAdapter(productAdapter);
         requestProductSearch(search);
 
+        btnCari.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(etCari.getText().toString().equals("") || etCari.getText().toString() == null){
+                    new AlertDialog.Builder(ResultSearch.this)
+                            .setTitle("Whoops . . .")
+                            .setMessage("Silakan masukkan parameter / kata kunci pencarian!")
+                            .setIcon(android.R.drawable.stat_notify_error)
+                            .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int whichButton) {
+                                    dialog.dismiss();
+                                }}).show().
+                            getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(Color.parseColor("#3d9b2d"));
+                }else{
+                    requestProductSearch(etCari.getText().toString());
+                }
+            }
+        });
 
     }
 

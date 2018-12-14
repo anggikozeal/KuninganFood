@@ -72,7 +72,6 @@ public class RiwayatTransaksiPembelian extends AppCompatActivity {
 
         @Override
         public Fragment getItem(int position) {
-//            return PlaceholderFragment.newInstance(position + 1);
             return FragmentTransaksiPembelian.newInstance(position + 1);
         }
 

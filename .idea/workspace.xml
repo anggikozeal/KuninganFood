@@ -6,9 +6,8 @@
     </shared>
   </component>
   <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="noti" />
-    <option name="TOOL_WINDOW_LOG_LEVEL" value="info" />
-    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="No Filters" />
+    <option name="TOOL_WINDOW_LOG_LEVEL" value="debug" />
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
     <option name="TOOL_WINDOW_REGEXP_FILTER" value="false" />
   </component>
   <component name="CMakeSettings">
@@ -18,6 +17,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="71ab403f-6c7e-4363-aec2-a3146b3cf8c2" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/laurensius_dede_suhardiman/foodmarketplace/PenarikanSaldo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/laurensius_dede_suhardiman/foodmarketplace/adapter/DrawdownAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/laurensius_dede_suhardiman/foodmarketplace/adapter/TransactionHistoryAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/laurensius_dede_suhardiman/foodmarketplace/fragments/FragmentPenarikanSaldo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/laurensius_dede_suhardiman/foodmarketplace/model/Drawdown.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/laurensius_dede_suhardiman/foodmarketplace/model/TransactionHistory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/icon_dollar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_penarikan_saldo.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_penarikan_saldo.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_drawdown.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_transaction_history.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/menu/menu_penarikan_saldo.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/javaCompile/classAnalysis.bin" afterDir="false" />
@@ -26,9 +37,15 @@
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/assetWizardSettings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/assetWizardSettings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/laurensius_dede_suhardiman/foodmarketplace/RiwayatTransaksiPembelian.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/laurensius_dede_suhardiman/foodmarketplace/RiwayatTransaksiPembelian.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/laurensius_dede_suhardiman/foodmarketplace/fragments/FragmentAkun.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/laurensius_dede_suhardiman/foodmarketplace/fragments/FragmentAkun.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/laurensius_dede_suhardiman/foodmarketplace/fragments/FragmentBeranda.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/laurensius_dede_suhardiman/foodmarketplace/fragments/FragmentBeranda.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_akun.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_akun.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_beranda.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_beranda.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
     </list>
@@ -63,87 +80,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ProsesAdapter.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/laurensius_dede_suhardiman/foodmarketplace/adapter/ProsesAdapter.java">
+      <file leaf-file-name="FragmentPenarikanSaldo.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/laurensius_dede_suhardiman/foodmarketplace/fragments/FragmentPenarikanSaldo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="131" column="13" selection-start-line="131" selection-start-column="13" selection-end-line="131" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/build.gradle">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="525">
-              <caret line="35" column="60" selection-start-line="35" selection-start-column="60" selection-end-line="35" selection-end-column="60" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FragmentBeranda.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/laurensius_dede_suhardiman/foodmarketplace/fragments/FragmentBeranda.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="104">
-              <caret line="230" selection-start-line="230" selection-end-line="230" />
+            <state relative-caret-position="299">
+              <caret line="359" column="61" selection-start-line="359" selection-start-column="61" selection-end-line="359" selection-end-column="61" />
               <folding>
-                <element signature="e#3913#4337#0" expanded="true" />
-                <element signature="e#4336#4337#0" expanded="true" />
-                <element signature="e#4750#5895#0" expanded="true" />
-                <element signature="e#5292#5515#0" expanded="true" />
-                <element signature="e#5514#5515#0" expanded="true" />
-                <element signature="e#5894#5895#0" expanded="true" />
-                <element signature="e#6241#6302#0" expanded="true" />
-                <element signature="e#6325#6363#0" expanded="true" />
-                <element signature="e#6388#6446#0" expanded="true" />
-                <element signature="e#6510#6550#0" expanded="true" />
-                <element signature="e#6621#6661#0" expanded="true" />
-                <element signature="e#6764#6815#0" expanded="true" />
-                <element signature="e#6949#7404#0" expanded="true" />
-                <element signature="e#7156#7196#0" expanded="true" />
-                <element signature="e#7403#7404#0" expanded="true" />
-                <element signature="e#7422#7911#0" expanded="true" />
-                <element signature="e#7910#7911#0" expanded="true" />
-                <element signature="e#8128#8180#0" expanded="true" />
-                <element signature="e#8246#8297#0" expanded="true" />
-                <element signature="e#8331#8373#0" expanded="true" />
-                <element signature="e#8443#8494#0" expanded="true" />
-                <element signature="e#8566#8621#0" expanded="true" />
-                <element signature="e#8894#8942#0" expanded="true" />
-                <element signature="e#9012#9060#0" expanded="true" />
-                <element signature="e#9165#9211#0" expanded="true" />
-                <element signature="e#9263#9314#0" expanded="true" />
-                <element signature="e#9366#9414#0" expanded="true" />
-                <element signature="e#9466#9518#0" expanded="true" />
-                <element signature="e#9570#9620#0" expanded="true" />
-                <element signature="e#9672#9721#0" expanded="true" />
-                <element signature="e#9773#9825#0" expanded="true" />
-                <element signature="e#9877#9932#0" expanded="true" />
-                <element signature="e#9984#10034#0" expanded="true" />
-                <element signature="e#10086#10135#0" expanded="true" />
-                <element signature="e#10226#10272#0" expanded="true" />
-                <element signature="e#10325#10376#0" expanded="true" />
-                <element signature="e#10429#10482#0" expanded="true" />
-                <element signature="e#10535#10586#0" expanded="true" />
-                <element signature="e#10689#10735#0" expanded="true" />
-                <element signature="e#10796#10848#0" expanded="true" />
-                <element signature="e#10909#10961#0" expanded="true" />
-                <element signature="e#11022#11075#0" expanded="true" />
-                <element signature="e#11136#11187#0" expanded="true" />
-                <element signature="e#11248#11297#0" expanded="true" />
-                <element signature="e#11358#11412#0" expanded="true" />
-                <element signature="e#13132#13387#0" expanded="true" />
-                <element signature="e#13386#13387#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#2881#2882#0" expanded="true" />
+                <element signature="e#2931#2932#0" expanded="true" />
+                <element signature="e#7714#7715#0" expanded="true" />
+                <element signature="e#7753#7754#0" expanded="true" />
+                <element signature="e#7797#7798#0" expanded="true" />
+                <element signature="e#7829#7830#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ProductAdapter.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/laurensius_dede_suhardiman/foodmarketplace/adapter/ProductAdapter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="39" column="98" selection-start-line="38" selection-start-column="12" selection-end-line="39" selection-end-column="98" />
             </state>
           </provider>
         </entry>
@@ -151,21 +101,18 @@
       <file leaf-file-name="strings.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="90" column="51" selection-start-line="90" selection-start-column="51" selection-end-line="90" selection-end-column="51" />
+            <state relative-caret-position="22">
+              <caret line="36" column="37" selection-start-line="36" selection-start-column="26" selection-end-line="36" selection-end-column="37" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="fragment_beranda.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_beranda.xml">
+      <file leaf-file-name="Login.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/laurensius_dede_suhardiman/foodmarketplace/Login.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="297">
-              <caret line="33" column="17" selection-start-line="33" selection-start-column="17" selection-end-line="33" selection-end-column="17" />
+            <state relative-caret-position="379">
+              <caret line="132" column="5" selection-start-line="92" selection-start-column="4" selection-end-line="132" selection-end-column="5" />
             </state>
-          </provider>
-          <provider editor-type-id="android-designer2">
-            <state />
           </provider>
         </entry>
       </file>
@@ -181,11 +128,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>rvKeranjang.</find>
-      <find>transaksiPembelianAdapter</find>
-      <find>transactionDetailAdapter</find>
-      <find>transactionProsesAdapter</find>
-      <find>transactionTagihanAdapter</find>
       <find>ivFoto</find>
       <find>is_ta</find>
       <find>Login.</find>
@@ -201,7 +143,6 @@
       <find>product</find>
       <find>rvProductKeranjang</find>
       <find>getContext()</find>
-      <find>objProduct</find>
       <find>inflaterBeranda.</find>
       <find>rvProductLatest.</find>
       <find>ResultSearch</find>
@@ -211,14 +152,14 @@
       <find>Keranjang</find>
       <find>keranjangAdapter</find>
       <find>TransactionDetail</find>
+      <find>objProduct</find>
+      <find>;</find>
+      <find>Drawdow</find>
+      <find>inflaterTransaksiPembelian</find>
+      <find>Drawdown</find>
+      <find>listTaransactionHistory</find>
     </findStrings>
     <replaceStrings>
-      <replace>#FFFFFF</replace>
-      <replace>etUsername</replace>
-      <replace>@mipmap</replace>
-      <replace>TransactionDetail</replace>
-      <replace>Transaction</replace>
-      <replace>rvTransaksiPembelian.</replace>
       <replace>transactionTagihanAdapter</replace>
       <replace>transactionProsesAdapter</replace>
       <replace>transactionKonfirmasiAdapter</replace>
@@ -231,8 +172,6 @@
       <replace>finishAdapter</replace>
       <replace>orderAdapter</replace>
       <replace>transactionOrderAdapter</replace>
-      <replace>this.</replace>
-      <replace>,</replace>
       <replace>= ;</replace>
       <replace>review</replace>
       <replace>rvProductReview</replace>
@@ -243,6 +182,14 @@
       <replace>EditProduct</replace>
       <replace>notifikasiAdapter</replace>
       <replace>Notifikasi</replace>
+      <replace>objProductHot</replace>
+      <replace>,</replace>
+      <replace>this.</replace>
+      <replace>=  ;</replace>
+      <replace>Drawdown</replace>
+      <replace>inflaterPernarikanSaldo</replace>
+      <replace>TransactionHistory</replace>
+      <replace>listTransactionHistory</replace>
     </replaceStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/app/src/main/java/com/laurensius_dede_suhardiman/foodmarketplace</dir>
@@ -2510,19 +2457,7 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_akun.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_food_marketplace.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_transaksi_penjualan.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_riwayat_transaksi_penjualan.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/item_order.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/laurensius_dede_suhardiman/foodmarketplace/adapter/TransactionOrderAdapter.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/laurensius_dede_suhardiman/foodmarketplace/adapter/OrderAdapter.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/laurensius_dede_suhardiman/foodmarketplace/adapter/KeranjangAdapter.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/laurensius_dede_suhardiman/foodmarketplace/KonfirmasiPembayaran.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/item_konfirmasi.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/laurensius_dede_suhardiman/foodmarketplace/adapter/KonfirmasiAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/laurensius_dede_suhardiman/foodmarketplace/adapter/TagihanAdapter.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/laurensius_dede_suhardiman/foodmarketplace/RiwayatTransaksiPembelian.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/laurensius_dede_suhardiman/foodmarketplace/adapter/TransactionProsesAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/item_proses.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/laurensius_dede_suhardiman/foodmarketplace/fragments/FragmentTransaksiPenjualan.java" />
@@ -2549,7 +2484,6 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/laurensius_dede_suhardiman/foodmarketplace/EditProduct.java" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/laurensius_dede_suhardiman/foodmarketplace/Login.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/laurensius_dede_suhardiman/foodmarketplace/fragments/FragmentAkun.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/laurensius_dede_suhardiman/foodmarketplace/ServiceNotification.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/laurensius_dede_suhardiman/foodmarketplace/model/Notifikasi.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_notifikasi.xml" />
@@ -2558,9 +2492,22 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/laurensius_dede_suhardiman/foodmarketplace/FoodMarketplace.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/laurensius_dede_suhardiman/foodmarketplace/fragments/FragmentNotifikasi.java" />
         <option value="$PROJECT_DIR$/app/build.gradle" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_beranda.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/laurensius_dede_suhardiman/foodmarketplace/fragments/FragmentBeranda.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_beranda.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_akun.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/laurensius_dede_suhardiman/foodmarketplace/RiwayatTransaksiPembelian.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/laurensius_dede_suhardiman/foodmarketplace/PenarikanSaldo.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_penarikan_saldo.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/laurensius_dede_suhardiman/foodmarketplace/fragments/FragmentAkun.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/laurensius_dede_suhardiman/foodmarketplace/model/Drawdown.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/item_drawdown.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/laurensius_dede_suhardiman/foodmarketplace/adapter/DrawdownAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_penarikan_saldo.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/laurensius_dede_suhardiman/foodmarketplace/model/TransactionHistory.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/item_transaction_history.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/laurensius_dede_suhardiman/foodmarketplace/adapter/TransactionHistoryAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/laurensius_dede_suhardiman/foodmarketplace/fragments/FragmentPenarikanSaldo.java" />
       </list>
     </option>
   </component>
@@ -2576,6 +2523,24 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="FoodMarketplace" type="b2602c69:ProjectViewProjectNode" />
+              <item name="FoodMarketplace" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
+            <path>
+              <item name="FoodMarketplace" type="b2602c69:ProjectViewProjectNode" />
+              <item name="FoodMarketplace" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="AndroidView">
         <subPane>
           <expand>
@@ -2611,7 +2576,20 @@
             <path>
               <item name="FoodMarketplace" type="1abcf292:AndroidViewProjectNode" />
               <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="foodmarketplace" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="FoodMarketplace" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
               <item name="res" type="d4f16f75:AndroidResFolderNode" />
+            </path>
+            <path>
+              <item name="FoodMarketplace" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="res" type="d4f16f75:AndroidResFolderNode" />
+              <item name="drawable" type="ddeffd01:AndroidResFolderTypeNode" />
             </path>
             <path>
               <item name="FoodMarketplace" type="1abcf292:AndroidViewProjectNode" />
@@ -2633,31 +2611,13 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="FoodMarketplace" type="b2602c69:ProjectViewProjectNode" />
-              <item name="FoodMarketplace" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-            </path>
-            <path>
-              <item name="FoodMarketplace" type="b2602c69:ProjectViewProjectNode" />
-              <item name="FoodMarketplace" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///media/renzcybermedia/Koridor 2/Data All About Praktek/Pakai Android Studio/apps/FoodMarketplace/app/src/main/java/com/laurensius_dede_suhardiman/foodmarketplace/FoodMarketplace.java" />
     <property name="device.picker.selection" value="c7d83c65" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi" />
-    <property name="settings.editor.selected.configurable" value="project.propDebugger" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
   </component>
   <component name="RecentsManager">
     <key name="android.template.packageName">
@@ -2813,6 +2773,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="55" y="25" width="1311" height="743" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="Android Profiler" order="12" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32899022" />
@@ -2825,11 +2786,11 @@
       <window_info anchor="bottom" id="Run" order="2" weight="0.32899022" />
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Terminal" order="11" weight="0.69381106" />
-      <window_info active="true" anchor="bottom" id="Logcat" order="10" visible="true" weight="0.43811074" />
+      <window_info anchor="bottom" id="Logcat" order="10" weight="0.7654723" />
       <window_info id="Captures" order="4" weight="0.25" />
       <window_info id="Capture Tool" order="6" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.36249015" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27423167" />
       <window_info anchor="bottom" id="Build" order="7" weight="0.5684039" />
       <window_info anchor="right" id="Gradle" order="6" weight="0.32939324" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -2862,7 +2823,6 @@
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="right" id="Preview" order="4" weight="0.34751773" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="right" id="Device File Explorer" order="5" side_tool="true" />
       <window_info anchor="bottom" id="Logcat" order="10" weight="0.6286645" />
       <window_info anchor="bottom" id="Version Control" order="9" />
@@ -2875,6 +2835,7 @@
       <window_info anchor="right" id="Theme Preview" order="7" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
     </layout-to-restore>
   </component>
@@ -2882,159 +2843,14 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/laurensius_dede_suhardiman/foodmarketplace/adapter/TransactionProsesAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="642">
-          <caret line="68" column="23" selection-start-line="68" selection-start-column="23" selection-end-line="68" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/laurensius_dede_suhardiman/foodmarketplace/RiwayatTransaksiPembelian.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="356">
-          <caret line="64" column="5" selection-start-line="58" selection-start-column="4" selection-end-line="64" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/laurensius_dede_suhardiman/foodmarketplace/adapter/TransactionTagihanAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-78">
-          <caret line="31" column="97" selection-start-line="31" selection-start-column="78" selection-end-line="31" selection-end-column="97" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_proses.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="70" column="50" selection-start-line="61" selection-start-column="16" selection-end-line="70" selection-end-column="50" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_product_finish.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-977" />
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_finish.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="855">
-          <caret line="57" column="41" selection-start-line="57" selection-start-column="41" selection-end-line="57" selection-end-column="41" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/laurensius_dede_suhardiman/foodmarketplace/adapter/FinishAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="417">
-          <caret line="105" column="80" selection-start-line="105" selection-start-column="80" selection-end-line="105" selection-end-column="80" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/laurensius_dede_suhardiman/foodmarketplace/adapter/TransactionFinishAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="855">
-          <caret line="77" column="65" selection-start-line="77" selection-start-column="65" selection-end-line="77" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/colors.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="37" selection-start-line="4" selection-start-column="37" selection-end-line="4" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_product_review.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="433">
-          <caret line="80" column="46" selection-start-line="80" selection-start-column="46" selection-end-line="80" selection-end-column="46" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/laurensius_dede_suhardiman/foodmarketplace/ProductReview.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="178" column="107" selection-start-line="178" selection-start-column="107" selection-end-line="178" selection-end-column="107" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/laurensius_dede_suhardiman/foodmarketplace/model/Review.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="11" column="20" lean-forward="true" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_review.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="40" lean-forward="true" selection-start-line="7" selection-start-column="40" selection-end-line="7" selection-end-column="40" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/laurensius_dede_suhardiman/foodmarketplace/adapter/TransactionOrderAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="47" column="5" selection-start-line="47" selection-start-column="5" selection-end-line="47" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/laurensius_dede_suhardiman/foodmarketplace/fragments/FragmentTransaksiPembelian.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1970">
-          <caret line="298" column="28" selection-start-line="298" selection-start-column="28" selection-end-line="299" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/laurensius_dede_suhardiman/foodmarketplace/model/Product.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_result_search.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="38" column="33" selection-end-line="94" selection-end-column="15" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_akun.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="705">
-          <caret line="47" column="46" selection-start-line="47" selection-start-column="46" selection-end-line="47" selection-end-column="46" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_detail_product.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2820">
           <caret line="188" column="51" selection-start-line="188" selection-start-column="51" selection-end-line="188" selection-end-column="51" />
         </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/laurensius_dede_suhardiman/foodmarketplace/RiwayatTransaksiPenjualan.java">
@@ -3055,23 +2871,23 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_tambah_produk.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="11" column="27" selection-end-line="120" selection-end-column="13" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_edit_produk.xml">
       <provider editor-type-id="android-designer2">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_edit_produk.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-150">
           <caret line="14" column="38" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="38" />
         </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/laurensius_dede_suhardiman/foodmarketplace/DetailProduct.java">
@@ -3102,13 +2918,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_shop_product.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="15" column="40" selection-start-line="15" selection-start-column="40" selection-end-line="15" selection-end-column="40" />
         </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/laurensius_dede_suhardiman/foodmarketplace/AddProduct.java">
@@ -3158,13 +2974,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider editor-type-id="android-manifest">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="462">
           <caret line="58" column="38" selection-start-line="58" selection-start-column="38" selection-end-line="58" selection-end-column="38" />
         </state>
-      </provider>
-      <provider editor-type-id="android-manifest">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/laurensius_dede_suhardiman/foodmarketplace/ResultSearch.java">
@@ -3174,33 +2990,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/laurensius_dede_suhardiman/foodmarketplace/Login.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
-          <caret line="168" column="63" selection-start-line="168" selection-start-column="63" selection-end-line="169" selection-end-column="106" />
-          <folding>
-            <element signature="e#9289#9354#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/laurensius_dede_suhardiman/foodmarketplace/adapter/NotifikasiAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" selection-start-line="2" selection-end-line="2" />
-          <folding>
-            <element signature="e#1522#1523#0" expanded="true" />
-            <element signature="e#1566#1567#0" expanded="true" />
-            <element signature="e#1612#1613#0" expanded="true" />
-            <element signature="e#1663#1664#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/laurensius_dede_suhardiman/foodmarketplace/fragments/FragmentAkun.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="115" column="76" selection-start-line="115" selection-start-column="76" selection-end-line="115" selection-end-column="76" />
         </state>
       </provider>
     </entry>
@@ -3258,30 +3051,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_notifikasi.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="750">
           <caret line="50" column="26" selection-start-line="50" selection-start-column="26" selection-end-line="50" selection-end-column="26" />
         </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/laurensius_dede_suhardiman/foodmarketplace/fragments/FragmentRiwayat.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="92" column="17" selection-start-line="77" selection-start-column="16" selection-end-line="92" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_notifikasi.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="29" column="35" selection-start-line="29" selection-start-column="35" selection-end-line="29" selection-end-column="35" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/laurensius_dede_suhardiman/foodmarketplace/fragments/FragmentNotifikasi.java">
@@ -3327,23 +3103,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_beranda.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="33" column="17" selection-start-line="33" selection-start-column="17" selection-end-line="33" selection-end-column="17" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="90" column="51" selection-start-line="90" selection-start-column="51" selection-end-line="90" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/laurensius_dede_suhardiman/foodmarketplace/fragments/FragmentKeranjang.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1515">
@@ -3365,58 +3124,241 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_beranda.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="793">
+          <caret line="119" column="8" lean-forward="true" selection-start-line="119" selection-start-column="8" selection-end-line="119" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/laurensius_dede_suhardiman/foodmarketplace/fragments/FragmentRiwayat.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="92" column="17" selection-start-line="77" selection-start-column="16" selection-end-line="92" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_akun.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="253" column="57" selection-start-line="253" selection-start-column="57" selection-end-line="253" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/laurensius_dede_suhardiman/foodmarketplace/fragments/FragmentTransaksiPembelian.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3795">
+          <caret line="298" column="28" selection-start-line="298" selection-start-column="28" selection-end-line="299" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_transaksi_pembelian.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="32" lean-forward="true" selection-end-line="71" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/laurensius_dede_suhardiman/foodmarketplace/PenarikanSaldo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-319">
+          <caret line="2" column="47" selection-start-line="2" selection-start-column="47" selection-end-line="2" selection-end-column="47" />
+          <folding>
+            <element signature="e#2980#2981#0" expanded="true" />
+            <element signature="e#3012#3013#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_riwayat.xml">
+      <provider selected="true" editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_notifikasi.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="705">
+          <caret line="47" column="23" lean-forward="true" selection-start-line="11" selection-start-column="8" selection-end-line="47" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/laurensius_dede_suhardiman/foodmarketplace/RiwayatTransaksiPembelian.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="356">
+          <caret line="73" column="47" selection-start-line="73" selection-start-column="47" selection-end-line="73" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/laurensius_dede_suhardiman/foodmarketplace/fragments/FragmentBeranda.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="230" selection-start-line="230" selection-end-line="230" />
+        <state relative-caret-position="199">
+          <caret line="106" column="63" selection-start-line="106" selection-start-column="63" selection-end-line="106" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/laurensius_dede_suhardiman/foodmarketplace/model/Transaction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="15" column="23" lean-forward="true" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_tagihan.xml">
+      <provider selected="true" editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_product_keranjang.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" column="30" lean-forward="true" selection-end-line="120" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/laurensius_dede_suhardiman/foodmarketplace/model/Drawdown.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="27" column="27" selection-start-line="27" selection-start-column="27" selection-end-line="27" selection-end-column="27" />
           <folding>
-            <element signature="e#3913#4337#0" expanded="true" />
-            <element signature="e#4336#4337#0" expanded="true" />
-            <element signature="e#4750#5895#0" expanded="true" />
-            <element signature="e#5292#5515#0" expanded="true" />
-            <element signature="e#5514#5515#0" expanded="true" />
-            <element signature="e#5894#5895#0" expanded="true" />
-            <element signature="e#6241#6302#0" expanded="true" />
-            <element signature="e#6325#6363#0" expanded="true" />
-            <element signature="e#6388#6446#0" expanded="true" />
-            <element signature="e#6510#6550#0" expanded="true" />
-            <element signature="e#6621#6661#0" expanded="true" />
-            <element signature="e#6764#6815#0" expanded="true" />
-            <element signature="e#6949#7404#0" expanded="true" />
-            <element signature="e#7156#7196#0" expanded="true" />
-            <element signature="e#7403#7404#0" expanded="true" />
-            <element signature="e#7422#7911#0" expanded="true" />
-            <element signature="e#7910#7911#0" expanded="true" />
-            <element signature="e#8128#8180#0" expanded="true" />
-            <element signature="e#8246#8297#0" expanded="true" />
-            <element signature="e#8331#8373#0" expanded="true" />
-            <element signature="e#8443#8494#0" expanded="true" />
-            <element signature="e#8566#8621#0" expanded="true" />
-            <element signature="e#8894#8942#0" expanded="true" />
-            <element signature="e#9012#9060#0" expanded="true" />
-            <element signature="e#9165#9211#0" expanded="true" />
-            <element signature="e#9263#9314#0" expanded="true" />
-            <element signature="e#9366#9414#0" expanded="true" />
-            <element signature="e#9466#9518#0" expanded="true" />
-            <element signature="e#9570#9620#0" expanded="true" />
-            <element signature="e#9672#9721#0" expanded="true" />
-            <element signature="e#9773#9825#0" expanded="true" />
-            <element signature="e#9877#9932#0" expanded="true" />
-            <element signature="e#9984#10034#0" expanded="true" />
-            <element signature="e#10086#10135#0" expanded="true" />
-            <element signature="e#10226#10272#0" expanded="true" />
-            <element signature="e#10325#10376#0" expanded="true" />
-            <element signature="e#10429#10482#0" expanded="true" />
-            <element signature="e#10535#10586#0" expanded="true" />
-            <element signature="e#10689#10735#0" expanded="true" />
-            <element signature="e#10796#10848#0" expanded="true" />
-            <element signature="e#10909#10961#0" expanded="true" />
-            <element signature="e#11022#11075#0" expanded="true" />
-            <element signature="e#11136#11187#0" expanded="true" />
-            <element signature="e#11248#11297#0" expanded="true" />
-            <element signature="e#11358#11412#0" expanded="true" />
-            <element signature="e#13132#13387#0" expanded="true" />
-            <element signature="e#13386#13387#0" expanded="true" />
+            <element signature="e#684#685#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_penarikan_saldo.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-198">
+          <caret line="26" selection-start-line="26" selection-end-line="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/laurensius_dede_suhardiman/foodmarketplace/adapter/DrawdownAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="282">
+          <caret line="29" selection-start-line="29" selection-end-line="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_penarikan_saldo.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="254">
+          <caret line="109" column="43" selection-start-line="109" selection-start-column="43" selection-end-line="109" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_drawdown.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1095">
+          <caret line="73" column="47" selection-start-line="73" selection-start-column="47" selection-end-line="73" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_transaction_history.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="40" selection-start-line="7" selection-start-column="40" selection-end-line="7" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/laurensius_dede_suhardiman/foodmarketplace/model/TransactionHistory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="27" selection-start-line="21" selection-start-column="27" selection-end-line="21" selection-end-column="27" />
+          <folding>
+            <element signature="e#518#519#0" expanded="true" />
+            <element signature="e#558#559#0" expanded="true" />
+            <element signature="e#594#595#0" expanded="true" />
+            <element signature="e#626#627#0" expanded="true" />
+            <element signature="e#654#655#0" expanded="true" />
+            <element signature="e#689#690#0" expanded="true" />
+            <element signature="e#720#721#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/laurensius_dede_suhardiman/foodmarketplace/adapter/TransactionHistoryAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-120">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1964#1965#0" expanded="true" />
+            <element signature="e#2016#2017#0" expanded="true" />
+            <element signature="e#2070#2071#0" expanded="true" />
+            <element signature="e#2129#2130#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/laurensius_dede_suhardiman/foodmarketplace/fragments/FragmentAkun.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="281">
+          <caret line="236" column="109" selection-start-line="227" selection-start-column="20" selection-end-line="236" selection-end-column="109" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/laurensius_dede_suhardiman/foodmarketplace/Login.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="379">
+          <caret line="132" column="5" selection-start-line="92" selection-start-column="4" selection-end-line="132" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="36" column="37" selection-start-line="36" selection-start-column="26" selection-end-line="36" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/laurensius_dede_suhardiman/foodmarketplace/fragments/FragmentPenarikanSaldo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="359" column="61" selection-start-line="359" selection-start-column="61" selection-end-line="359" selection-end-column="61" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2881#2882#0" expanded="true" />
+            <element signature="e#2931#2932#0" expanded="true" />
+            <element signature="e#7714#7715#0" expanded="true" />
+            <element signature="e#7753#7754#0" expanded="true" />
+            <element signature="e#7797#7798#0" expanded="true" />
+            <element signature="e#7829#7830#0" expanded="true" />
           </folding>
         </state>
       </provider>

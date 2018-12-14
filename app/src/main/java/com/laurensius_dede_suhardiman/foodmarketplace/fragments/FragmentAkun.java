@@ -19,6 +19,7 @@ import android.widget.TextView;
 import com.laurensius_dede_suhardiman.foodmarketplace.BukaToko;
 import com.laurensius_dede_suhardiman.foodmarketplace.FoodMarketplace;
 import com.laurensius_dede_suhardiman.foodmarketplace.Login;
+import com.laurensius_dede_suhardiman.foodmarketplace.PenarikanSaldo;
 import com.laurensius_dede_suhardiman.foodmarketplace.R;
 import com.laurensius_dede_suhardiman.foodmarketplace.Register;
 import com.laurensius_dede_suhardiman.foodmarketplace.ServiceNotification;
@@ -33,6 +34,7 @@ public class FragmentAkun extends Fragment {
     private LinearLayout llNoSession, llSession;
     private LinearLayout llMenuKelolaAkun, llMenuLogout;
     private LinearLayout llMenuKelolaToko, llMenuTambahDagangan, llMenuKelolaDagangan ;
+    private LinearLayout llMenuPenarikanSaldo;
 
     private Button btnLogin,btnRegister;
 
@@ -85,6 +87,9 @@ public class FragmentAkun extends Fragment {
         llMenuKelolaToko = (LinearLayout)inflaterAkun.findViewById(R.id.ll_menu_kelola_toko);
         llMenuTambahDagangan =  (LinearLayout)inflaterAkun.findViewById(R.id.ll_menu_tambah_dagangan);
         llMenuKelolaDagangan =  (LinearLayout)inflaterAkun.findViewById(R.id.ll_menu_kelola_dagangan);
+
+
+        llMenuPenarikanSaldo =  (LinearLayout)inflaterAkun.findViewById(R.id.ll_menu_penarikan_saldo);
 
         return inflaterAkun;
     }
@@ -200,6 +205,29 @@ public class FragmentAkun extends Fragment {
                     new AlertDialog.Builder(getContext())
                             .setTitle("Konfirmasi")
                             .setMessage("Buka toko untuk mulai berjualan?")
+                            .setIcon(android.R.drawable.ic_menu_info_details)
+                            .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int whichButton) {
+                                    dialog.dismiss();
+
+                                }}).show().
+                            getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(Color.parseColor("#3d9b2d"));
+                }
+            }
+        });
+
+        //
+        llMenuPenarikanSaldo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(FoodMarketplace.currentShop != null){
+                    Intent intent = new Intent(getContext(),PenarikanSaldo.class);
+                    intent.putExtra("idShop",FoodMarketplace.currentShop.getId());
+                    startActivity(intent);
+                }else{
+                    new AlertDialog.Builder(getContext())
+                            .setTitle("Konfirmasi")
+                            .setMessage("Tidak dapat melakukan penarikan saldo! Anda belum memiliki toko!")
                             .setIcon(android.R.drawable.ic_menu_info_details)
                             .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
                                 public void onClick(DialogInterface dialog, int whichButton) {

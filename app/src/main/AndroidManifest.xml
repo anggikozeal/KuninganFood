@@ -52,11 +52,17 @@
         <activity android:name=".ProductReview" />
         <activity android:name=".ResultSearch" />
         <activity android:name=".ShopProduct" />
-        <activity android:name=".EditProduct"></activity>
+        <activity android:name=".EditProduct" />
+
         <service
             android:name=".ServiceNotification"
             android:enabled="true"
             android:exported="true" />
+
+        <activity
+            android:name=".PenarikanSaldo"
+            android:label="@string/title_activity_penarikan_saldo"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

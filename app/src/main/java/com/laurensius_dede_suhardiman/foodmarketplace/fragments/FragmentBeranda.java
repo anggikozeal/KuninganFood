@@ -31,6 +31,7 @@ import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
+import com.google.gson.JsonObject;
 import com.laurensius_dede_suhardiman.foodmarketplace.DetailProduct;
 import com.laurensius_dede_suhardiman.foodmarketplace.R;
 import com.laurensius_dede_suhardiman.foodmarketplace.ResultSearch;
@@ -41,6 +42,7 @@ import com.laurensius_dede_suhardiman.foodmarketplace.model.Product;
 import com.laurensius_dede_suhardiman.foodmarketplace.model.Shop;
 import com.laurensius_dede_suhardiman.foodmarketplace.model.User;
 import com.synnapps.carouselview.CarouselView;
+import com.synnapps.carouselview.ImageClickListener;
 import com.synnapps.carouselview.ImageListener;
 
 import org.json.JSONArray;
@@ -61,6 +63,7 @@ public class FragmentBeranda extends Fragment {
 
     RecyclerView.LayoutManager mLayoutManager;
     List<Product> listProduct = new ArrayList<>();
+    List<Product> listProductHot = new ArrayList<>();
     private RecyclerView rvProductLatest;
     private ProductAdapter productAdapter = null;
 
@@ -97,6 +100,15 @@ public class FragmentBeranda extends Fragment {
         llSuccess.setVisibility(View.GONE);
 
         caroviewBeranda.setImageListener(imageListener);
+        caroviewBeranda.setImageClickListener(new ImageClickListener() {
+            @Override
+            public void onClick(int position) {
+                Product product = listProductHot.get(position);
+                Intent intent = new Intent(getActivity(),DetailProduct.class);
+                intent.putExtra("productObject", product);
+                startActivity(intent);
+            }
+        });
 
         rvProductLatest.addOnItemTouchListener(new CustomListener(getActivity(), new CustomListener.OnItemClickListener() {
             @Override
@@ -227,8 +239,39 @@ public class FragmentBeranda extends Fragment {
                     if(jsonArrayProductHot.length() > 0){
                         bmp = new Bitmap[jsonArrayProductHot.length()];
                         for(int a=0;a<jsonArrayProductHot.length();a++){
-                            byte[] imageBytes = Base64.decode(jsonArrayProductHot.getJSONObject(a).getString("image"), Base64.DEFAULT);
+                            JSONObject objProductHot = jsonArrayProductHot.getJSONObject(a);
+                            JSONObject objShop = objProductHot.getJSONObject(getResources().getString(R.string.json_key_shop));
+                            JSONObject objUser = objShop.getJSONObject(getResources().getString(R.string.json_key_user));
+                            listProductHot.add(new Product(
+                                    objProductHot.getString(getResources().getString(R.string.json_key_id)),
+                                    objProductHot.getString(getResources().getString(R.string.json_key_id_shop)),
+                                    objProductHot.getString(getResources().getString(R.string.json_key_name)),
+                                    objProductHot.getString(getResources().getString(R.string.json_key_category)),
+                                    objProductHot.getString(getResources().getString(R.string.json_key_status)),
+                                    objProductHot.getString(getResources().getString(R.string.json_key_price)),
+                                    objProductHot.getString(getResources().getString(R.string.json_key_discount)),
+                                    objProductHot.getString(getResources().getString(R.string.json_key_description)),
+                                    objProductHot.getString(getResources().getString(R.string.json_key_rating)),
+                                    objProductHot.getString(getResources().getString(R.string.json_key_image)),
+                                    new Shop(
+                                            objShop.getString(getResources().getString(R.string.json_key_id)),
+                                            objShop.getString(getResources().getString(R.string.json_key_id_user)),
+                                            objShop.getString(getResources().getString(R.string.json_key_shop_name)),
+                                            objShop.getString(getResources().getString(R.string.json_key_address)),
+                                            new User(
+                                                    objUser.getString(getResources().getString(R.string.json_key_id)),
+                                                    objUser.getString(getResources().getString(R.string.json_key_username)),
+                                                    objUser.getString(getResources().getString(R.string.json_key_password)),
+                                                    objUser.getString(getResources().getString(R.string.json_key_full_name)),
+                                                    objUser.getString(getResources().getString(R.string.json_key_address)),
+                                                    objUser.getString(getResources().getString(R.string.json_key_phone)),
+                                                    objUser.getString(getResources().getString(R.string.json_key_last_login))
+                                            )
+                                    )
+                            ));
+                            byte[] imageBytes = Base64.decode(objProductHot.getString("image"), Base64.DEFAULT);
                             bmp[a] = BitmapFactory.decodeByteArray(imageBytes, 0, imageBytes.length);
+
                         }
                         llSlider.setVisibility(View.VISIBLE);
                         caroviewBeranda.setPageCount(jsonArrayProductHot.length());

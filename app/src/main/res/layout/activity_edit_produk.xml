@@ -110,7 +110,7 @@
             android:id="@+id/btn_save"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/colorPrimary"
+            android:background="@color/colorAccent"
             android:layout_marginBottom="90dp"
             android:textColor="#FFFFFF"
             android:textSize="6pt"

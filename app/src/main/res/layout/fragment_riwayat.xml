@@ -18,8 +18,8 @@
         android:visibility="visible"
         android:orientation="vertical">
         <ImageView
-            android:layout_width="128dp"
-            android:layout_height="128dp"
+            android:layout_width="96dp"
+            android:layout_height="96dp"
             android:src="@drawable/icon_riwayat_pembelian"/>
         <TextView
             android:layout_width="match_parent"
@@ -44,8 +44,8 @@
         android:visibility="visible"
         android:orientation="vertical">
         <ImageView
-            android:layout_width="128dp"
-            android:layout_height="128dp"
+            android:layout_width="96dp"
+            android:layout_height="96dp"
             android:src="@drawable/icon_riwayat_penjualan"/>
         <TextView
             android:layout_width="match_parent"

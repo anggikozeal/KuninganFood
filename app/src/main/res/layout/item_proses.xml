@@ -75,7 +75,7 @@
                     android:layout_height="wrap_content"
                     android:text="KONFRIMASI TERIMA BARANG"
                     android:textColor="#FFFFFF"
-                    android:background="@color/colorPrimary"
+                    android:background="@color/colorAccent"
                     android:layout_margin="5dp"/>
                 <Button
                     android:id="@+id/btn_kirim"
@@ -83,7 +83,7 @@
                     android:layout_height="wrap_content"
                     android:text="KIRIM"
                     android:textColor="#FFFFFF"
-                    android:background="@color/colorPrimary"
+                    android:background="@color/colorAccent"
                     android:layout_margin="5dp"/>
             </LinearLayout>
         </LinearLayout>

@@ -80,7 +80,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:text="Kirim Penilaian / Ulasan"
-                android:background="@color/colorPrimary"
+                android:background="@color/colorAccent"
                 android:textColor="#FFFFFF"/>
         </LinearLayout>
 

@@ -1,5 +1,6 @@
 package com.laurensius_dede_suhardiman.foodmarketplace;
 
+import android.app.Activity;
 import android.support.design.widget.TabLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -18,10 +19,13 @@ public class PenarikanSaldo extends AppCompatActivity {
 
     private ViewPager mViewPager;
 
+    public static Activity activity;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_penarikan_saldo);
+
+        PenarikanSaldo.activity = this;
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);

@@ -64,7 +64,7 @@
                     android:layout_height="wrap_content"
                     android:text="KONFRIMASI PEMBAYARAN"
                     android:textColor="#FFFFFF"
-                    android:background="@color/colorPrimary"
+                    android:background="@color/colorAccent"
                     android:layout_margin="5dp"/>
             </LinearLayout>
         </LinearLayout>

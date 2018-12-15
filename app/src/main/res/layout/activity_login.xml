@@ -47,7 +47,7 @@
                 android:layout_height="wrap_content"
                 android:text="SIGN IN"
                 android:textColor="#FFFFFF"
-                android:background="@color/colorPrimary"
+                android:background="@color/colorAccent"
                 android:layout_marginBottom="16dp"/>
             <TextView
                 android:id="@+id/tv_register"

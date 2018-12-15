@@ -3,6 +3,7 @@ package com.laurensius_dede_suhardiman.foodmarketplace.fragments;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -27,6 +28,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.laurensius_dede_suhardiman.foodmarketplace.FoodMarketplace;
 import com.laurensius_dede_suhardiman.foodmarketplace.Login;
+import com.laurensius_dede_suhardiman.foodmarketplace.PenarikanSaldo;
 import com.laurensius_dede_suhardiman.foodmarketplace.R;
 import com.laurensius_dede_suhardiman.foodmarketplace.adapter.DrawdownAdapter;
 import com.laurensius_dede_suhardiman.foodmarketplace.adapter.TransactionHistoryAdapter;
@@ -173,8 +175,7 @@ public class FragmentPenarikanSaldo extends Fragment {
                                 .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
                                     public void onClick(DialogInterface dialog, int whichButton) {
                                         dialog.dismiss();
-                                        String penarikan = etPenarikan.getText().toString();
-                                        requestPencairan(penarikan);
+                                        requestPencairan();
                                     }}).show().
                                 getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(Color.parseColor("#3d9b2d"));
                     }
@@ -346,10 +347,10 @@ public class FragmentPenarikanSaldo extends Fragment {
         drawdownnAdapter.notifyDataSetChanged();
     }
 
-    public void requestPencairan(String penarikan){
+    public void requestPencairan(){
         Random random = new Random();
         int rnd = random.nextInt(999999 - 99) + 99;
-        String req_pencairan = getResources().getString(R.string.tag_request_drawdown_insert);
+        String insert_pencairan = getResources().getString(R.string.tag_request_drawdown_insert);
         String url = getResources().getString(R.string.api)
                 .concat(getResources().getString(R.string.endpoint_drawdown_insert))
                 .concat(String.valueOf(rnd))
@@ -358,8 +359,8 @@ public class FragmentPenarikanSaldo extends Fragment {
         pDialog.setMessage(getResources().getString(R.string.progress_loading));
         pDialog.show();
         final Map<String, String> params = new HashMap<String, String>();
-        params.put("id_shop", idShop);
-        params.put("total", penarikan);
+        params.put("id_shop", FoodMarketplace.currentShop.getId());
+        params.put("total", etPenarikan.getText().toString());
         JSONObject parameter = new JSONObject(params);
         JsonObjectRequest jsonObjReq = new JsonObjectRequest(Request.Method.POST,url, parameter,
                 new Response.Listener<JSONObject>() {
@@ -367,16 +368,52 @@ public class FragmentPenarikanSaldo extends Fragment {
                     public void onResponse(JSONObject response) {
                         pDialog.dismiss();
                         Log.d(getResources().getString(R.string.debug),response.toString());
-                        parseData(response);
+                        try{
+                            if(response.getString(getResources().getString(R.string.json_key_severity)).equals("success")){
+                                new AlertDialog.Builder(getContext())
+                                        .setTitle("Sukses")
+                                        .setMessage("Request pencairan hasil penjualan senilai Rp. " + etPenarikan.getText().toString() + " berhasil dikirim!")
+                                        .setIcon(android.R.drawable.ic_dialog_info)
+                                        .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                                            public void onClick(DialogInterface dialog, int whichButton) {
+                                                Intent intent = new Intent(getContext(),PenarikanSaldo.class);
+                                                startActivity(intent);
+                                                PenarikanSaldo.activity.finish();
+                                            }}).show().
+                                        getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(Color.parseColor("#3d9b2d"));
+                            }  else{
+                                new AlertDialog.Builder(getContext())
+                                        .setTitle("Gagal")
+                                        .setMessage("Request pencairan hasil penjualan gagal! Silakan coba lagi!")
+                                        .setIcon(android.R.drawable.ic_dialog_alert)
+                                        .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                                            public void onClick(DialogInterface dialog, int whichButton) {
+                                            }}).show().
+                                        getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(Color.parseColor("#3d9b2d"));
+                            }
+                        }catch (JSONException e){
+                            new AlertDialog.Builder(getContext())
+                                    .setTitle("Gagal")
+                                    .setMessage("Request pencairan hasil penjualan gagal! Silakan coba lagi!")
+                                    .setIcon(android.R.drawable.ic_dialog_alert)
+                                    .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                                        public void onClick(DialogInterface dialog, int whichButton) {
+                                        }}).show().
+                                    getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(Color.parseColor("#3d9b2d"));
+                        }
+
                     }
                 },
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        String jsonError = "";
+                        String jsonError;
                         NetworkResponse networkResponse = error.networkResponse;
                         if (networkResponse != null && networkResponse.data != null) {
                             jsonError = new String(networkResponse.data);
+                            Log.d(getResources().getString(R.string.debug),jsonError);
+                        }else{
+                            jsonError = "response nya null";
                             Log.d(getResources().getString(R.string.debug),jsonError);
                         }
                         pDialog.dismiss();
@@ -390,6 +427,6 @@ public class FragmentPenarikanSaldo extends Fragment {
                                 getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(Color.parseColor("#3d9b2d"));
                     }
                 });
-        AppController.getInstance().addToRequestQueue(jsonObjReq, req_pencairan);
+        AppController.getInstance().addToRequestQueue(jsonObjReq, insert_pencairan);
     }
 }

@@ -36,7 +36,7 @@
             android:textColor="#FFFFFF"
             android:layout_margin="5dp"
             android:text="Unggah Bukti Transaksi"
-            android:background="@color/colorPrimary"/>
+            android:background="@color/colorAccent"/>
 
 
     </LinearLayout>

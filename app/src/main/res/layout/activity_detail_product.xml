@@ -63,7 +63,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="#FFFFFF"
-                android:background="@color/colorPrimary"
+                android:background="@color/colorAccent"
                 android:text="BERIKAN ULASAN"/>
         </LinearLayout>
 
@@ -199,7 +199,7 @@
                 android:id="@+id/btn_keranjang"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/colorPrimary"
+                android:background="@color/colorAccent"
                 android:layout_marginTop="16dp"
                 android:textColor="#FFFFFF"
                 android:text="Tambahkan Ke Keranjang"/>

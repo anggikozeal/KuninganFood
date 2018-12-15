@@ -48,7 +48,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="@color/colorPrimary"
+                    android:background="@color/colorPrimaryDark"
                     android:textColor="#FFFFFF"
                     android:layout_margin="5dp"
                     android:text="REGISTER"/>
@@ -57,7 +57,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="@color/colorPrimary"
+                    android:background="@color/colorAccent"
                     android:textColor="#FFFFFF"
                     android:layout_margin="5dp"
                     android:text="Login"/>
@@ -81,6 +81,11 @@
                 android:padding="16dp"
                 android:orientation="vertical"
                 android:background="@mipmap/background_gradient">
+                <ImageView
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:src="@drawable/icon_user"
+                    android:layout_marginBottom="10dp"/>
                 <TextView
                     android:id="@+id/tv_full_name"
                     android:layout_width="match_parent"

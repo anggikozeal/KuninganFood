@@ -1,5 +1,7 @@
 package com.laurensius_dede_suhardiman.foodmarketplace;
 
+//http://www.phplatesttutorials.com/run-php-based-cron-job-on-localhost-windows/
+
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;

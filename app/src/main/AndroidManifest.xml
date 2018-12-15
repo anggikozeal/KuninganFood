@@ -17,17 +17,17 @@
     <application
         android:name=".appcontroller.AppController"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/icon_no_session"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/icon_no_session"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".FoodMarketplace"
+            android:name=".SplashScreen"
+            android:theme="@style/Theme.AppCompat.NoActionBar"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -62,7 +62,9 @@
         <activity
             android:name=".PenarikanSaldo"
             android:label="@string/title_activity_penarikan_saldo"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity android:name=".FoodMarketplace"></activity>
     </application>
 
 </manifest>

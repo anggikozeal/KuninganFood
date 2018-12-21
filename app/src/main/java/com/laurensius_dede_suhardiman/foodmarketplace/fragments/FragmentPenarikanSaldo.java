@@ -156,10 +156,10 @@ public class FragmentPenarikanSaldo extends Fragment {
                                 }}).show().
                             getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(Color.parseColor("#3d9b2d"));
                 }else{
-                    if(saldoTersedia < 500000 || ctrOnRequest > 0){
+                    if(saldoTersedia < 500000 || ctrOnRequest > 0 || (saldoTersedia < Double.parseDouble(etPenarikan.getText().toString()))){
                         new AlertDialog.Builder(getContext())
                                 .setTitle("Informasi")
-                                .setMessage("Tidak dapat melakukan pencairan! Pastikan nilai transaksi Anda sudah lebih dari Rp 500.000,00 dan tidak ada request pencairan dengan sattus ON_REQUEST!")
+                                .setMessage("Tidak dapat melakukan pencairan! Pastikan saldo memenuhi dan nilai transaksi Anda sudah lebih dari Rp 500.000,00 dan tidak ada request pencairan dengan status ON_REQUEST! ")
                                 .setIcon(android.R.drawable.ic_menu_info_details)
                                 .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
                                     public void onClick(DialogInterface dialog, int whichButton) {
@@ -260,7 +260,7 @@ public class FragmentPenarikanSaldo extends Fragment {
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
-
+                        Log.d(getResources().getString(R.string.debug),String.valueOf(response));
                         pDialog.dismiss();
                         parseData(response);
                     }
@@ -328,9 +328,11 @@ public class FragmentPenarikanSaldo extends Fragment {
                     llFailed.setVisibility(View.GONE);
                     llSuccess.setVisibility(View.VISIBLE);
                 }else {
-                    llNoData.setVisibility(View.VISIBLE);
+                    saldoTersedia = totalPenjualan - totalPenarikan;
+                    tvSaldoTersedia.setText("Rp  " + String.valueOf(saldoTersedia));
+                    llNoData.setVisibility(View.GONE);
                     llFailed.setVisibility(View.GONE);
-                    llSuccess.setVisibility(View.GONE);
+                    llSuccess.setVisibility(View.VISIBLE);
                 }
 
 

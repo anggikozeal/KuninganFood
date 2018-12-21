@@ -18,7 +18,8 @@
     <string name="slash">/</string>
 
     <!--API-->
-    <string name="api">http://192.168.0.8/foodmarketplace/index.php/api/</string>
+    <!--<string name="api">http://192.168.0.8/foodmarketplace/index.php/api/</string>-->
+    <string name="api">http://10.0.2.2/foodmarketplace/index.php/api/</string>
     <string name="endpoint_product_latest">product_latest/</string>
     <string name="endpoint_login">verifikasi/</string>
     <string name="endpoint_transac_insert">transaction_insert/</string>
